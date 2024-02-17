@@ -24,7 +24,7 @@ int APIENTRY WinMain(HINSTANCE hInstansce, HINSTANCE prevInstance, LPSTR cmdPara
 	WndClass.hIcon = LoadIcon(NULL, IDI_APPLICATION);
 	WndClass.hInstance = hInstansce;
 	WndClass.lpfnWndProc = (WNDPROC)WndProc;
-	WndClass.lpszClassName = TEXT("Tales Weaver");
+	WndClass.lpszClassName = TEXT("");
 	WndClass.lpszMenuName = NULL;
 	WndClass.style = CS_HREDRAW | CS_VREDRAW;
 	RegisterClass(&WndClass);
