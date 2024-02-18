@@ -19,15 +19,36 @@
     <Filter Include="소스 파일\Define.h">
       <UniqueIdentifier>{ed28adab-9bb8-4d80-abde-b91e502ce1e4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Manager">
+      <UniqueIdentifier>{6456bdf6-76c7-4ae6-81ce-bec7b267795c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Manager\GameManager">
+      <UniqueIdentifier>{63255dd3-1cd6-4b85-b4fd-fcf3d9016559}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Manager\InputManager">
+      <UniqueIdentifier>{c5961533-9c87-4c41-b356-3ddf80ae6e85}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="GameManager.cpp">
+      <Filter>소스 파일\Manager\GameManager</Filter>
+    </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>소스 파일\Manager\InputManager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Define.h">
       <Filter>소스 파일\Define.h</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager.h">
+      <Filter>소스 파일\Manager\GameManager</Filter>
+    </ClInclude>
+    <ClInclude Include="InputManager.h">
+      <Filter>소스 파일\Manager\InputManager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

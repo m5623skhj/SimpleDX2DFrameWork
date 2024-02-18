@@ -2,9 +2,11 @@
 
 #include "Define.h"
 #include <windowsx.h>
+#include "GameManager.h"
 
 HINSTANCE g_hInstance;
 HWND g_hMainWnd;
+bool g_windowActive = true;
 
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 void MainLoop(MSG& message);
@@ -12,7 +14,6 @@ void MainLoop(MSG& message);
 int APIENTRY WinMain(HINSTANCE hInstansce, HINSTANCE prevInstance, LPSTR cmdParam, int cmdShow)
 {
 	MSG message;
-	WSADATA wsaData;
 	WNDCLASS WndClass;
 
 	g_hInstance = hInstansce;
@@ -42,6 +43,15 @@ int APIENTRY WinMain(HINSTANCE hInstansce, HINSTANCE prevInstance, LPSTR cmdPara
 
 LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
+	switch (message)
+	{case WM_ACTIVATEAPP:
+		g_windowActive = (bool)wParam;
+
+		return 0;
+	default:
+		break;
+	}
+
 	return DefWindowProc(hwnd, message, wParam, lParam);
 }
 
@@ -51,9 +61,18 @@ void MainLoop(MSG& message)
 	{
 		if (PeekMessage(&message, NULL, 0, 0, PM_REMOVE))
 		{
+			if (message.message == WM_QUIT)
+			{
+				return;
+			}
+
+			TranslateMessage(&message);
+			DispatchMessage(&message);
 		}
 		else
 		{
+			if (GameManager::GetInst().Update(g_windowActive) == false)
+				PostQuitMessage(0);
 		}
 	}
 }
