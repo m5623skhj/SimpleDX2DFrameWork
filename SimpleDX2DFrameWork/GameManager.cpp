@@ -1,9 +1,31 @@
 #include "PreCompile.h"
 #include "GameManager.h"
+#include "InputManager.h"
+#include "Camera.h"
+#include "SoundManager.h"
+
+GameManager::GameManager()
+{
+	Initialize();
+	InputManager::GetInst().Initialize();
+	Camera::GetInst().Initialize();
+	SoundManager::GetInst().Initialize();
+}
+
+void GameManager::Initialize()
+{
+
+}
 
 bool GameManager::Update(bool windowActive)
 {
-	UNREFERENCED_PARAMETER(windowActive);
+	if (windowActive == true)
+	{
+		InputManager::GetInst().InputProcess();
+	}
+
+	WORD posX, posY;
+	Camera::GetInst().GetCameraPosition(posX, posY);
 
 	return true;
 }

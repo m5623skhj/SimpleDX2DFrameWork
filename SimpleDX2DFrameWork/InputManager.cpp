@@ -1,6 +1,11 @@
 #include "PreCompile.h"
 #include "InputManager.h"
 
+void InputManager::Initialize()
+{
+
+}
+
 void InputManager::InputProcess()
 {
 

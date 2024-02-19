@@ -28,6 +28,12 @@
     <Filter Include="소스 파일\Manager\InputManager">
       <UniqueIdentifier>{c5961533-9c87-4c41-b356-3ddf80ae6e85}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Camera">
+      <UniqueIdentifier>{98aa227b-100a-4a0f-9315-365e00141c93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Manager\SoundManager">
+      <UniqueIdentifier>{7d4d3922-a27d-4e4f-85cc-3213b12d0ed4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -39,6 +45,12 @@
     <ClCompile Include="InputManager.cpp">
       <Filter>소스 파일\Manager\InputManager</Filter>
     </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>소스 파일\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundManager.cpp">
+      <Filter>소스 파일\Manager\SoundManager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Define.h">
@@ -49,6 +61,12 @@
     </ClInclude>
     <ClInclude Include="InputManager.h">
       <Filter>소스 파일\Manager\InputManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>소스 파일\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundManager.h">
+      <Filter>소스 파일\Manager\SoundManager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

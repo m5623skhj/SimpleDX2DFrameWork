@@ -16,6 +16,9 @@ public:
 	}
 
 public:
+	void Initialize();
+
+public:
 	void InputProcess();
 
 	bool GetKeyPressThisFrame();

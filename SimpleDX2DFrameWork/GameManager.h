@@ -3,7 +3,7 @@
 class GameManager
 {
 private:
-	GameManager() = default;
+	GameManager();
 	~GameManager() = default;
 	GameManager(const GameManager& other) = delete;
 	GameManager& operator=(const GameManager& other) = delete;
@@ -14,6 +14,9 @@ public:
 		static GameManager instance;
 		return instance;
 	}
+
+private:
+	void Initialize();
 
 public:
 	bool Update(bool windowActive);
