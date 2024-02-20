@@ -8,7 +8,7 @@ public:
 	GameClient();
 	virtual ~GameClient();
 
-	void Start(WCHAR* szIP, WORD Port);
+	void Start();
 	void Stop();
 
 	bool RecvPacket(CNetServerSerializationBuf** packet);

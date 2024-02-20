@@ -11,6 +11,8 @@ GameManager::GameManager()
 	InputManager::GetInst().Initialize();
 	Camera::GetInst().Initialize();
 	SoundManager::GetInst().Initialize();
+
+	gameClient->Start();
 }
 
 void GameManager::Initialize()

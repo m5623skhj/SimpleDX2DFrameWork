@@ -11,9 +11,12 @@ GameClient::~GameClient()
 
 }
 
-void GameClient::Start(WCHAR* szIP, WORD Port)
+void GameClient::Start()
 {
-
+	if (CNetClient::NetServerOptionParsing(L"OptionFile/GameClientOptionFile.txt") == false)
+	{
+		g_Dump.Crash();
+	}
 }
 
 void GameClient::Stop()
