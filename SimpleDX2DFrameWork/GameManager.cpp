@@ -3,6 +3,7 @@
 #include "InputManager.h"
 #include "Camera.h"
 #include "SoundManager.h"
+#include "GameClient.h"
 
 GameManager::GameManager()
 {
@@ -14,7 +15,7 @@ GameManager::GameManager()
 
 void GameManager::Initialize()
 {
-
+	gameClient = new GameClient();
 }
 
 bool GameManager::Update(bool windowActive)

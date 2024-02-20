@@ -1,5 +1,7 @@
 #pragma once
 
+class GameClient;
+
 class GameManager
 {
 private:
@@ -23,4 +25,7 @@ public:
 
 private:
 	void Render();
+
+private:
+	GameClient* gameClient;
 };
