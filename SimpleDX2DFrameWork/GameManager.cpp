@@ -3,6 +3,7 @@
 #include "InputManager.h"
 #include "Camera.h"
 #include "SoundManager.h"
+#include "ObjectManager.h"
 #include "GameClient.h"
 #include "NetServerSerializeBuffer.h"
 #include "Define.h"
@@ -20,6 +21,7 @@ GameManager::GameManager()
 	InputManager::GetInst().Initialize();
 	Camera::GetInst().Initialize();
 	SoundManager::GetInst().Initialize();
+	ObjectManager::GetInst().Initialize();
 
 	gameClient->Start();
 }
