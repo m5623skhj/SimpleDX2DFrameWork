@@ -20,12 +20,21 @@ public:
 private:
 	void Initialize();
 
+private:
+	GameClient* gameClient;
+
+#pragma region Update
 public:
 	bool Update(bool windowActive);
 
 private:
+	void UpdateObjectFromNetwork();
+	bool CalculateCheckTime();
 	void Render();
 
 private:
-	GameClient* gameClient;
+	DWORD beforeTime;
+	DWORD checkTime;
+	DWORD restTime;
+#pragma endregion Update
 };
