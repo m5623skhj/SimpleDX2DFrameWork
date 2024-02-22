@@ -4,6 +4,7 @@
 #include "Define.h"
 
 class Object;
+class CNetServerSerializationBuf;
 
 class ObjectManager
 {
@@ -24,6 +25,8 @@ public:
 public:
 	void UpdateObjects();
 	void RenderObjects();
+
+	void ObjectNetworkProc(CNetServerSerializationBuf* packet);
 
 private:
 	std::unordered_map<ObjectId, Object*> objectMap;
