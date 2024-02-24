@@ -17,25 +17,43 @@ if (restTime >= ONE_FRAME_MAX_TIME) \
 	return true; \
 }
 
-GameManager::GameManager()
+void GameManager::Initialize(HWND hwnd)
 {
-	Initialize();
+	InitializeD2D(hwnd);
+	InitializeAllManager();
+
+	beforeTime = timeGetTime();
+	checkTime = beforeTime;
+
+	gameClient = new GameClient();
+
+	gameClient->Start();
+}
+
+void GameManager::InitializeAllManager()
+{
 	InputManager::GetInst().Initialize();
 	Camera::GetInst().Initialize();
 	SoundManager::GetInst().Initialize();
 	ObjectManager::GetInst().Initialize();
 	TextManager::GetInst().Initialize();
-	ImageManager::GetInst().Initialize();
-
-	gameClient->Start();
+	ImageManager::GetInst().Initialize(d2dRenderTarget);
 }
 
-void GameManager::Initialize()
+void GameManager::InitializeD2D(HWND hwnd)
 {
-	beforeTime = timeGetTime();
-	checkTime = beforeTime;
+	if (FAILED(D2D1CreateFactory(D2D1_FACTORY_TYPE_MULTI_THREADED, &d2dFactory)) == true)
+	{
+		throw;
+	}
 
-	gameClient = new GameClient();
+	if (FAILED(d2dFactory->CreateHwndRenderTarget(
+		D2D1::RenderTargetProperties()
+		, D2D1::HwndRenderTargetProperties(hwnd, D2D1::SizeU(WINDOW_SIZE_X, WINDOW_SIZE_Y))
+		, &d2dRenderTarget)) == true)
+	{
+		throw;
+	}
 }
 
 bool GameManager::Update(bool windowActive)

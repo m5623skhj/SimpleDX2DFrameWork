@@ -1,11 +1,12 @@
 #pragma once
+#include "D2DCommonHeader.h"
 
 class GameClient;
 
 class GameManager
 {
 private:
-	GameManager();
+	GameManager() = default;
 	~GameManager() = default;
 	GameManager(const GameManager& other) = delete;
 	GameManager& operator=(const GameManager& other) = delete;
@@ -17,8 +18,12 @@ public:
 		return instance;
 	}
 
+public:
+	void Initialize(HWND hwnd);
+
 private:
-	void Initialize();
+	void InitializeD2D(HWND hwnd);
+	void InitializeAllManager();
 
 private:
 	GameClient* gameClient;
@@ -36,5 +41,9 @@ private:
 	DWORD beforeTime;
 	DWORD checkTime;
 	DWORD restTime;
+
+private:
+	ID2D1Factory* d2dFactory;
+	ID2D1HwndRenderTarget* d2dRenderTarget;
 #pragma endregion Update
 };

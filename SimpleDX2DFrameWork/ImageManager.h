@@ -1,4 +1,5 @@
 #pragma once
+#include "D2DCommonHeader.h"
 
 class ImageManager
 {
@@ -15,6 +16,12 @@ public:
 		return instance;
 	}
 
+#pragma region Rendering
 public:
-	void Initialize();
+	HRESULT Initialize(ID2D1HwndRenderTarget* inRenderTarget);
+
+private:
+	ID2D1HwndRenderTarget* renderTarget;
+	IWICImagingFactory* imagingFactory;
+#pragma endregion Rendering
 };

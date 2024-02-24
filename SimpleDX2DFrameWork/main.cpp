@@ -31,11 +31,13 @@ int APIENTRY WinMain(HINSTANCE hInstansce, HINSTANCE prevInstance, LPSTR cmdPara
 	RegisterClass(&WndClass);
 
 	g_hMainWnd = CreateWindow(WndClass.lpszClassName, WndClass.lpszClassName, WS_OVERLAPPED | WS_POPUP,
-		CW_USEDEFAULT, CW_USEDEFAULT, dfWINDOW_SIZE_X, dfWINDOW_SIZE_Y,
+		CW_USEDEFAULT, CW_USEDEFAULT, WINDOW_SIZE_X, WINDOW_SIZE_Y,
 		NULL, (HMENU)NULL, hInstansce, NULL);
 
 	ShowWindow(g_hMainWnd, SW_SHOWMAXIMIZED);
 	ShowCursor(FALSE);
+
+	GameManager::GetInst().Initialize(g_hMainWnd);
 
 	MainLoop(message);
 	return (int)message.wParam;

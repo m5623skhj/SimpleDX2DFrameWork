@@ -40,9 +40,6 @@
     <Filter Include="소스 파일\Object">
       <UniqueIdentifier>{c2896fef-9423-4fb4-9560-0d90fe3b9280}</UniqueIdentifier>
     </Filter>
-    <Filter Include="헤더 파일\Define.h">
-      <UniqueIdentifier>{ed28adab-9bb8-4d80-abde-b91e502ce1e4}</UniqueIdentifier>
-    </Filter>
     <Filter Include="소스 파일\Manager\ImageManager">
       <UniqueIdentifier>{d0d0e8d3-e1dd-41dd-a278-92a7200e607e}</UniqueIdentifier>
     </Filter>
@@ -104,9 +101,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Define.h">
-      <Filter>헤더 파일\Define.h</Filter>
-    </ClInclude>
     <ClInclude Include="GameManager.h">
       <Filter>소스 파일\Manager\GameManager</Filter>
     </ClInclude>
@@ -136,6 +130,12 @@
     </ClInclude>
     <ClInclude Include="TextManager.h">
       <Filter>소스 파일\Manager\TextManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Define.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="D2DCommonHeader.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
