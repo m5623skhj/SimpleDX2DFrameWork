@@ -13,9 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="소스 파일\Define.h">
-      <UniqueIdentifier>{ed28adab-9bb8-4d80-abde-b91e502ce1e4}</UniqueIdentifier>
-    </Filter>
     <Filter Include="소스 파일\Manager">
       <UniqueIdentifier>{6456bdf6-76c7-4ae6-81ce-bec7b267795c}</UniqueIdentifier>
     </Filter>
@@ -42,6 +39,15 @@
     </Filter>
     <Filter Include="소스 파일\Object">
       <UniqueIdentifier>{c2896fef-9423-4fb4-9560-0d90fe3b9280}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Define.h">
+      <UniqueIdentifier>{ed28adab-9bb8-4d80-abde-b91e502ce1e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Manager\ImageManager">
+      <UniqueIdentifier>{d0d0e8d3-e1dd-41dd-a278-92a7200e607e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Manager\TextManager">
+      <UniqueIdentifier>{2f01e13e-fc8d-4329-9543-8cf9b81cf9c7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -90,10 +96,16 @@
     <ClCompile Include="PacketManager.cpp">
       <Filter>소스 파일\Manager\ObjectManager</Filter>
     </ClCompile>
+    <ClCompile Include="ImageManager.cpp">
+      <Filter>소스 파일\Manager\ImageManager</Filter>
+    </ClCompile>
+    <ClCompile Include="TextManager.cpp">
+      <Filter>소스 파일\Manager\TextManager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Define.h">
-      <Filter>소스 파일\Define.h</Filter>
+      <Filter>헤더 파일\Define.h</Filter>
     </ClInclude>
     <ClInclude Include="GameManager.h">
       <Filter>소스 파일\Manager\GameManager</Filter>
@@ -118,6 +130,12 @@
     </ClInclude>
     <ClInclude Include="PacketManager.h">
       <Filter>소스 파일\Manager\ObjectManager</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageManager.h">
+      <Filter>소스 파일\Manager\ImageManager</Filter>
+    </ClInclude>
+    <ClInclude Include="TextManager.h">
+      <Filter>소스 파일\Manager\TextManager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

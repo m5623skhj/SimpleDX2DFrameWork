@@ -4,6 +4,8 @@
 #include "Camera.h"
 #include "SoundManager.h"
 #include "ObjectManager.h"
+#include "TextManager.h"
+#include "ImageManager.h"
 #include "GameClient.h"
 #include "NetServerSerializeBuffer.h"
 #include "Define.h"
@@ -22,6 +24,8 @@ GameManager::GameManager()
 	Camera::GetInst().Initialize();
 	SoundManager::GetInst().Initialize();
 	ObjectManager::GetInst().Initialize();
+	TextManager::GetInst().Initialize();
+	ImageManager::GetInst().Initialize();
 
 	gameClient->Start();
 }
