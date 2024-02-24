@@ -125,5 +125,14 @@ bool GameManager::CalculateCheckTime()
 
 void GameManager::Render()
 {
+	d2dRenderTarget->BeginDraw();
 
+	// ¸Ê ·»´õ¸µ
+	
+	// ¿ÀºêÁ§Æ® ·»´õ¸µ
+	ObjectManager::GetInst().RenderObjects();
+
+	// ¸¶¿ì½º Æ÷ÀÎÅÍ ·»´õ¸µ
+
+	d2dRenderTarget->EndDraw();
 }
