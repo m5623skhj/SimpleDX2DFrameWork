@@ -11,9 +11,9 @@
 #include "Define.h"
 
 #define CHECK_REST_TIME() \
-if (restTime >= ONE_FRAME_MAX_TIME) \
+if (restTime >= oneFrameMaxTime) \
 { \
-	restTime -= ONE_FRAME_MAX_TIME; \
+	restTime -= oneFrameMaxTime; \
 	return true; \
 }
 
@@ -49,7 +49,7 @@ void GameManager::InitializeD2D(HWND hwnd)
 
 	if (FAILED(d2dFactory->CreateHwndRenderTarget(
 		D2D1::RenderTargetProperties()
-		, D2D1::HwndRenderTargetProperties(hwnd, D2D1::SizeU(WINDOW_SIZE_X, WINDOW_SIZE_Y))
+		, D2D1::HwndRenderTargetProperties(hwnd, D2D1::SizeU(windowSizeX, windowSizeY))
 		, &d2dRenderTarget)) == true)
 	{
 		throw;
@@ -105,22 +105,27 @@ bool GameManager::CalculateCheckTime()
 	DWORD deltaTime = nowTime - beforeTime;
 	beforeTime = nowTime;
 
-	if (deltaTime < ONE_FRAME_MAX_TIME)
+	if (deltaTime < oneFrameMaxTime)
 	{
-		if (deltaTime + restTime < ONE_FRAME_MAX_TIME)
-		{
-			deltaTime += restTime;
-			restTime = 0;
-		}
-		Sleep(ONE_FRAME_MAX_TIME - deltaTime);
-		beforeTime += ONE_FRAME_MAX_TIME - deltaTime;
+		CalculateSleepTime(deltaTime);
 	}
 	else
 	{
-		restTime += deltaTime - ONE_FRAME_MAX_TIME;
+		restTime += deltaTime - oneFrameMaxTime;
 	}
 
 	return true;
+}
+
+void GameManager::CalculateSleepTime(DWORD deltaTime)
+{
+	if (deltaTime + restTime < oneFrameMaxTime)
+	{
+		deltaTime += restTime;
+		restTime = 0;
+	}
+	Sleep(oneFrameMaxTime - deltaTime);
+	beforeTime += oneFrameMaxTime - deltaTime;
 }
 
 void GameManager::Render()

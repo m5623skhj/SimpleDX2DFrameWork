@@ -7,6 +7,8 @@
 const int windowSizeX = 1024;
 const int windowSizeY = 768;
 
+const int halfOfCameraX = 512;
+const int halfOfCameraY = 384;
 
 /////////////////////////////////////////////////////////////////////////
 // ·»´õ¸µ °ü·Ã 
@@ -19,3 +21,13 @@ const int oneFrameMaxTime = 20;
 /////////////////////////////////////////////////////////////////////////
 using ObjectId = UINT64;
 using PacketType = WORD;
+
+struct MapRange
+{
+	WORD top;
+	WORD bottom;
+	WORD left;
+	WORD right;
+};
+
+#define OUT 

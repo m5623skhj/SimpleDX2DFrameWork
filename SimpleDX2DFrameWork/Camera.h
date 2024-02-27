@@ -1,4 +1,5 @@
 #pragma once
+#include "Define.h"
 
 class Camera
 {
@@ -19,13 +20,16 @@ public:
 	void Initialize();
 
 public:
-	void InitPositionFromPlayer(WORD palyerPosX, WORD playerPosY);
+	void InitPositionFromPlayer(WORD playerPosX, WORD playerPosY);
 	void SetPositionFromPlayer(WORD playerPosX, WORD playerPosY);
 
-	void GetCameraPosition(WORD& outPosX, WORD& outPosY);
-	void SetMapRange(WORD top, WORD bottom, WORD left, WORD right);
+	void GetCameraPosition(OUT WORD& outPosX, OUT WORD& outPosY);
+	void SetMapRange(const MapRange& inMapRange);
 
 private:
 	WORD cameraPosX = 0;
 	WORD cameraPosY = 0;
+
+private:
+	MapRange mapRange;
 };

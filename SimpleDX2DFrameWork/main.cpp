@@ -31,7 +31,7 @@ int APIENTRY WinMain(HINSTANCE hInstansce, HINSTANCE prevInstance, LPSTR cmdPara
 	RegisterClass(&WndClass);
 
 	g_hMainWnd = CreateWindow(WndClass.lpszClassName, WndClass.lpszClassName, WS_OVERLAPPED | WS_POPUP,
-		CW_USEDEFAULT, CW_USEDEFAULT, WINDOW_SIZE_X, WINDOW_SIZE_Y,
+		CW_USEDEFAULT, CW_USEDEFAULT, windowSizeX, windowSizeY,
 		NULL, (HMENU)NULL, hInstansce, NULL);
 
 	ShowWindow(g_hMainWnd, SW_SHOWMAXIMIZED);

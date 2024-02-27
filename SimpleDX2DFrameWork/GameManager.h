@@ -35,6 +35,7 @@ public:
 private:
 	void UpdateObjectFromNetwork();
 	bool CalculateCheckTime();
+	void CalculateSleepTime(DWORD deltaTime);
 	void Render();
 
 private:
