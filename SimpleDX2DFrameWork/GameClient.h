@@ -1,6 +1,7 @@
 #pragma once
 #include "NetClient.h"
 #include "Queue.h"
+#include <thread>
 
 class GameClient : public CNetClient
 {
@@ -30,4 +31,12 @@ private:
 
 private:
 	CListBaseQueue<CNetServerSerializationBuf*> recvQueue;
+
+private:
+	void HeartbeatThread();
+
+private:
+	std::thread heartbeatThread;
+
+	HANDLE heartbeatExitEventHandle;
 };

@@ -1,5 +1,6 @@
 #include "PreCompile.h"
 #include "GameClient.h"
+#include "Define.h"
 
 GameClient::GameClient()
 {
@@ -17,11 +18,13 @@ void GameClient::Start()
 	{
 		g_Dump.Crash();
 	}
+
+	heartbeatExitEventHandle = CreateEvent(NULL, TRUE, FALSE, NULL);
 }
 
 void GameClient::Stop()
 {
-
+	SetEvent(heartbeatExitEventHandle);
 }
 
 bool GameClient::RecvPacket(CNetServerSerializationBuf** packet)
@@ -72,4 +75,19 @@ void GameClient::OnWorkerThreadEnd()
 void GameClient::OnError(st_Error* pError)
 {
 
+}
+
+void GameClient::HeartbeatThread()
+{
+	while (true)
+	{
+		if (WaitForSingleObject(heartbeatExitEventHandle, heartbeatThreadAwakenMillisec) == WAIT_TIMEOUT)
+		{
+			// 서버에 하트비트 패킷 송신
+		}
+		else
+		{
+			break;
+		}
+	}
 }
