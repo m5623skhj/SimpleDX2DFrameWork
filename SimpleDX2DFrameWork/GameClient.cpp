@@ -1,13 +1,11 @@
 #include "PreCompile.h"
 #include "GameClient.h"
 #include "Define.h"
+#include "NetServerSerializeBuffer.h"
+#include "Log.h"
+#include <string_view>
 
 GameClient::GameClient()
-{
-
-}
-
-GameClient::~GameClient()
 {
 
 }
@@ -25,21 +23,29 @@ void GameClient::Start()
 void GameClient::Stop()
 {
 	SetEvent(heartbeatExitEventHandle);
+	CNetClient::Stop();
 }
 
 bool GameClient::RecvPacket(CNetServerSerializationBuf** packet)
 {
+	if (recvQueue.GetRestSize() <= 0)
+	{
+		return false;
+	}
+
+	recvQueue.Dequeue(packet);
+
 	return true;
 }
 
-bool GameClient::SendToServer(CNetServerSerializationBuf* packet)
+void GameClient::SendToServer(CNetServerSerializationBuf* packet)
 {
-	return true;
+	SendPacket(packet);
 }
 
 int GameClient::GetRecvQueueUseSize()
 {
-	return 0;
+	return recvQueue.GetRestSize();
 }
 
 void GameClient::OnConnectionComplete()
@@ -52,14 +58,15 @@ void GameClient::OnRelease()
 
 }
 
-void GameClient::OnRecv(CNetServerSerializationBuf* OutReadBuf)
+void GameClient::OnRecv(CNetServerSerializationBuf* outReadBuf)
 {
-
+	CNetServerSerializationBuf::AddRefCount(outReadBuf);
+	recvQueue.Enqueue(outReadBuf);
 }
 
-void GameClient::OnSend(int sendsize)
+void GameClient::OnSend(int sendSize)
 {
-
+	UNREFERENCED_PARAMETER(sendSize);
 }
 
 void GameClient::OnWorkerThreadBegin()
@@ -74,7 +81,10 @@ void GameClient::OnWorkerThreadEnd()
 
 void GameClient::OnError(st_Error* pError)
 {
+	const std::wstring_view logType(L"Write log type in here");
 
+	_LOG(LOG_LEVEL::LOG_ERROR, logType.data(), L"Internal error : %d\nWindow error : %d\n"
+	, pError->ServerErr, pError->GetLastErr);
 }
 
 void GameClient::HeartbeatThread()
