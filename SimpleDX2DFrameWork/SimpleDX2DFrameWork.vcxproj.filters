@@ -137,5 +137,8 @@
     <ClInclude Include="D2DCommonHeader.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="KeyCode.h">
+      <Filter>소스 파일\Manager\InputManager</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
