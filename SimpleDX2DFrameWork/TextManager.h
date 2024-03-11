@@ -1,19 +1,9 @@
 #pragma once
+#include "ManagerDefine.h"
 
 class TextManager
 {
-private:
-	TextManager() = default;
-	~TextManager() = default;
-	TextManager(const TextManager& other) = delete;
-	TextManager& operator=(const TextManager& other) = delete;
-
-public:
-	static TextManager& GetInst()
-	{
-		static TextManager instance;
-		return instance;
-	}
+	NON_COPYABLE(TextManager);
 
 public:
 	void Initialize();

@@ -2,24 +2,16 @@
 #include <unordered_map>
 #include <shared_mutex>
 #include "Define.h"
+#include "ManagerDefine.h"
 
 class Object;
 class CNetServerSerializationBuf;
 
 class ObjectManager
 {
-private:
-	ObjectManager() = default;
-	~ObjectManager() = default;
-	ObjectManager(const ObjectManager& other) = delete;
-	ObjectManager& operator=(const ObjectManager& other) = delete;
+	NON_COPYABLE(ObjectManager);
 
 public:
-	static ObjectManager& GetInst()
-	{
-		static ObjectManager instance;
-		return instance;
-	}
 	void Initialize();
 
 public:

@@ -140,5 +140,8 @@
     <ClInclude Include="KeyCode.h">
       <Filter>소스 파일\Manager\InputManager</Filter>
     </ClInclude>
+    <ClInclude Include="ManagerDefine.h">
+      <Filter>소스 파일\Manager</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

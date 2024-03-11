@@ -1,21 +1,11 @@
 #pragma once
 #include <vector>
 #include "KeyCode.h"
+#include "ManagerDefine.h"
 
 class InputManager
 {
-private:
-	InputManager() = default;
-	~InputManager() = default;
-	InputManager(const InputManager& other) = delete;
-	InputManager& operator=(const InputManager& other) = delete;
-
-public:
-	static InputManager& GetInst()
-	{
-		static InputManager instance;
-		return instance;
-	}
+	NON_COPYABLE(InputManager);
 
 public:
 	void Initialize();

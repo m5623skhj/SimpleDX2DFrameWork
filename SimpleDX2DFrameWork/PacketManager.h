@@ -1,19 +1,11 @@
 #pragma once
 #include "Define.h"
+#include "ManagerDefine.h"
 
 class PacketManager
 {
-private:
-	PacketManager() = default;
-	~PacketManager() = default;
-	PacketManager(const PacketManager& other) = delete;
-	PacketManager& operator=(const PacketManager& other) = delete;
+	NON_COPYABLE(PacketManager);
 
 public:
-	static PacketManager& GetInst()
-	{
-		static PacketManager instance;
-		return instance;
-	}
 	void Initialize();
 };
