@@ -16,6 +16,4 @@ public:
 		return instance;
 	}
 	void Initialize();
-
-	// 패킷 타입에 따라서 패킷 핸들러를 미리 등록하도록 해야하나?
 };
