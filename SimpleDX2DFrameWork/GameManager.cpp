@@ -63,9 +63,6 @@ bool GameManager::Update(bool windowActive)
 		InputManager::GetInst().InputProcess();
 	}
 
-	WORD posX, posY;
-	Camera::GetInst().GetCameraPosition(posX, posY);
-
 	UpdateObjectFromNetwork();
 
 	if (CalculateCheckTime() == false)
@@ -130,9 +127,13 @@ void GameManager::CalculateSleepTime(DWORD deltaTime)
 
 void GameManager::Render()
 {
+	auto cameraPos = Camera::GetInst().GetCameraPosition();
+
 	d2dRenderTarget->BeginDraw();
 
+	// Render map
 	ObjectManager::GetInst().RenderObjects();
+	// Render mouse pointer
 
 	d2dRenderTarget->EndDraw();
 }

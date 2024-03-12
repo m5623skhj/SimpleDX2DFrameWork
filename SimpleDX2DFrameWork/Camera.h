@@ -23,12 +23,11 @@ public:
 	void InitPositionFromPlayer(WORD playerPosX, WORD playerPosY);
 	void SetPositionFromPlayer(WORD playerPosX, WORD playerPosY);
 
-	void GetCameraPosition(OUT WORD& outPosX, OUT WORD& outPosY);
+	Position GetCameraPosition();
 	void SetMapRange(const MapRange& inMapRange);
 
 private:
-	WORD cameraPosX = 0;
-	WORD cameraPosY = 0;
+	Position cameraPos;
 
 private:
 	MapRange mapRange;

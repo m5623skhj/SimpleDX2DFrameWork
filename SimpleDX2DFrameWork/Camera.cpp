@@ -10,67 +10,66 @@ void Camera::InitPositionFromPlayer(WORD playerPosX, WORD playerPosY)
 {
 	if (playerPosX <= halfOfCameraX)
 	{
-		cameraPosX = 0;
+		cameraPos.posX = 0;
 	}
 	else if (playerPosX >= mapRange.right - halfOfCameraX)
 	{
-		cameraPosX = mapRange.right - halfOfCameraX;
+		cameraPos.posX = mapRange.right - halfOfCameraX;
 	}
 	else
 	{
-		cameraPosX = playerPosX - halfOfCameraX;
+		cameraPos.posX = playerPosX - halfOfCameraX;
 	}
 
 	if (playerPosY <= halfOfCameraY)
 	{
-		cameraPosY = 0;
+		cameraPos.posY = 0;
 	}
 	else if (playerPosY >= mapRange.bottom - halfOfCameraY)
 	{
-		cameraPosY = mapRange.bottom - halfOfCameraY;
+		cameraPos.posY = mapRange.bottom - halfOfCameraY;
 	}
 	else
 	{
-		cameraPosY = playerPosY;
+		cameraPos.posY = playerPosY;
 	}
 }
 
 void Camera::SetPositionFromPlayer(WORD playerPosX, WORD playerPosY)
 {
-	int checkX = cameraPosX - halfOfCameraX;
-	int checkY = cameraPosY - halfOfCameraY;
+	int checkX = cameraPos.posX - halfOfCameraX;
+	int checkY = cameraPos.posY - halfOfCameraY;
 
 	if (checkX >= mapRange.left && checkX + halfOfCameraX <= mapRange.right)
 	{
-		cameraPosX = checkX;
+		cameraPos.posX = checkX;
 	}
 	else if (checkX < mapRange.left)
 	{
-		cameraPosX = 0;
+		cameraPos.posX = 0;
 	}
 	else
 	{
-		cameraPosX = mapRange.right - halfOfCameraX;
+		cameraPos.posX = mapRange.right - halfOfCameraX;
 	}
 
 	if (checkY >= mapRange.top && checkY + halfOfCameraY <= mapRange.bottom)
 	{
-		cameraPosY = checkY;
+		cameraPos.posY = checkY;
 	}
 	else if (checkY < mapRange.top)
 	{
-		cameraPosY = 0;
+		cameraPos.posY = 0;
 	}
 	else
 	{
-		cameraPosY = mapRange.bottom - halfOfCameraY;
+		cameraPos.posY = mapRange.bottom - halfOfCameraY;
 	}
 }
 
-void Camera::GetCameraPosition(OUT WORD& outPosX, OUT WORD& outPosY)
+Position Camera::GetCameraPosition()
 {
-	outPosX = cameraPosX;
-	outPosY = cameraPosY;
+	return cameraPos;
 }
 
 void Camera::SetMapRange(const MapRange& inMapRange)

@@ -45,4 +45,10 @@ struct MapRange
 	WORD right;
 };
 
+struct Position
+{
+	WORD posX;
+	WORD posY;
+};
+
 #define OUT 

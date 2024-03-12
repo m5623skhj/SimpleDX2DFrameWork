@@ -46,6 +46,9 @@
     <Filter Include="소스 파일\Manager\TextManager">
       <UniqueIdentifier>{2f01e13e-fc8d-4329-9543-8cf9b81cf9c7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Object\NPC">
+      <UniqueIdentifier>{01af1fd7-ab39-496f-abbf-f37e9c03f03c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -99,6 +102,9 @@
     <ClCompile Include="TextManager.cpp">
       <Filter>소스 파일\Manager\TextManager</Filter>
     </ClCompile>
+    <ClCompile Include="FightableObject.cpp">
+      <Filter>소스 파일\Object\NPC</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameManager.h">
@@ -142,6 +148,9 @@
     </ClInclude>
     <ClInclude Include="ManagerDefine.h">
       <Filter>소스 파일\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="FightableObject.h">
+      <Filter>소스 파일\Object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
