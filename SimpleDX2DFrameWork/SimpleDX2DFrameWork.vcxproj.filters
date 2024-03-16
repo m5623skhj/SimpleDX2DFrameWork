@@ -150,7 +150,7 @@
       <Filter>소스 파일\Manager</Filter>
     </ClInclude>
     <ClInclude Include="FightableObject.h">
-      <Filter>소스 파일\Object</Filter>
+      <Filter>소스 파일\Object\NPC</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
