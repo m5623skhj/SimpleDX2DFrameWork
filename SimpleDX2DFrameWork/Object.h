@@ -4,7 +4,8 @@
 class Object
 {
 public:
-	Object() = default;
+	Object() = delete;
+	explicit Object(ObjectId inObjectId, Position& inPosition);
 	virtual ~Object() = default;
 
 public:
@@ -13,11 +14,13 @@ public:
 
 public:
 	void SetPosition(const Position& inPosition);
+	void SetMoveSpeed(BYTE inMoveSpeed);
 
 protected:
 	ObjectId objectId;
 
 protected:
 	Position position;
+	// Get from server? Or client data?
 	BYTE moveSpeed;
 };

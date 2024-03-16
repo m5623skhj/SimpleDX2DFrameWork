@@ -4,7 +4,8 @@
 class FightableObject : public Object
 {
 public:
-	FightableObject() = default;
+	FightableObject() = delete;
+	explicit FightableObject(ObjectId inObjectId, Position& inPosition, int inHp, bool inIsDie);
 	virtual ~FightableObject() override = default;
 
 public:

@@ -5,11 +5,6 @@
 #include "Log.h"
 #include <string_view>
 
-GameClient::GameClient()
-{
-
-}
-
 void GameClient::Start()
 {
 	if (CNetClient::NetServerOptionParsing(L"OptionFile/GameClientOptionFile.txt") == false)

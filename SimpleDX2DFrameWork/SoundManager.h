@@ -7,7 +7,8 @@
 
 class SoundManager
 {
-	NON_COPYABLE_WITH_NON_DEFAULT_DESTRUCTOR(SoundManager);
+	NON_COPYABLE_WITH_NON_DESTRUCTOR(SoundManager);
+	~SoundManager();
 
 public:
 	void Initialize();

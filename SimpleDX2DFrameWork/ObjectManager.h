@@ -21,6 +21,6 @@ public:
 	void ObjectNetworkProc(CNetServerSerializationBuf* packet);
 
 private:
-	std::unordered_map<ObjectId, Object*> objectMap;
+	std::unordered_map<ObjectId, std::shared_ptr<Object>> objectMap;
 	std::shared_mutex objectMapLock;
 };

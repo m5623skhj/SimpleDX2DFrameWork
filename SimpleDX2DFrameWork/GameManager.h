@@ -2,8 +2,6 @@
 #include "D2DCommonHeader.h"
 #include "ManagerDefine.h"
 
-class GameClient;
-
 class GameManager
 {
 	NON_COPYABLE(GameManager);
@@ -14,9 +12,6 @@ public:
 private:
 	void InitializeD2D(HWND hwnd);
 	void InitializeAllManager();
-
-private:
-	GameClient* gameClient;
 
 #pragma region Update
 public:

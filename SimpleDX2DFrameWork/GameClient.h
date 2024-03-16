@@ -2,13 +2,15 @@
 #include "NetClient.h"
 #include "Queue.h"
 #include <thread>
+#include "ManagerDefine.h"
 
 class GameClient : public CNetClient
 {
-public:
-	GameClient();
+	NON_COPYABLE_WITH_NON_DESTRUCTOR(GameClient);
+protected:
 	virtual ~GameClient() = default;
 
+public:
 	void Start();
 	void Stop();
 

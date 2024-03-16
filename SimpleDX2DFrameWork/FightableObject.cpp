@@ -1,6 +1,13 @@
 #include "PreCompile.h"
 #include "FightableObject.h"
 
+FightableObject::FightableObject(ObjectId inObjectId, Position& inPosition, int inHp, bool inIsDie)
+	: Object(inObjectId, inPosition)
+	, hp(inHp)
+	, isDie(inIsDie)
+{
+}
+
 void FightableObject::UseSkill(/* need skill class? */)
 {
 

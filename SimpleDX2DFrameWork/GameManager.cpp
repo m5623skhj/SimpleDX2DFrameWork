@@ -6,6 +6,7 @@
 #include "ObjectManager.h"
 #include "TextManager.h"
 #include "ImageManager.h"
+#include "PacketManager.h"
 #include "GameClient.h"
 #include "NetServerSerializeBuffer.h"
 #include "Define.h"
@@ -25,9 +26,7 @@ void GameManager::Initialize(HWND hwnd)
 	beforeTime = timeGetTime();
 	checkTime = beforeTime;
 
-	gameClient = new GameClient();
-
-	gameClient->Start();
+	GameClient::GetInst().Start();
 }
 
 void GameManager::InitializeAllManager()
@@ -38,6 +37,7 @@ void GameManager::InitializeAllManager()
 	ObjectManager::GetInst().Initialize();
 	TextManager::GetInst().Initialize();
 	ImageManager::GetInst().Initialize(d2dRenderTarget);
+	PacketManager::GetInst().Initialize();
 }
 
 void GameManager::InitializeD2D(HWND hwnd)
@@ -76,11 +76,11 @@ bool GameManager::Update(bool windowActive)
 
 void GameManager::UpdateObjectFromNetwork()
 {
-	int queueRestSize = gameClient->GetRecvQueueUseSize();
+	int queueRestSize = GameClient::GetInst().GetRecvQueueUseSize();
 	for (int i = 0; i < queueRestSize; ++i)
 	{
 		CNetServerSerializationBuf* buffer = nullptr;
-		if (gameClient->RecvPacket(&buffer) == false)
+		if (GameClient::GetInst().RecvPacket(&buffer) == false)
 		{
 			break;
 		}
