@@ -16,4 +16,4 @@ private:
 #define NON_COPYABLE(NonCopyableClass) \
 	NON_COPYABLE_WITH_NON_DESTRUCTOR(NonCopyableClass) \
 private: \
-	~NonCopyableClass() = default; \
+	~NonCopyableClass() = default;

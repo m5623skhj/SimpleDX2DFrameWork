@@ -12,7 +12,7 @@ void InputManager::InitializeKeySetting()
 {
 	keyArray.reserve(KeyCode::InvalidKeyCode);
 
-	SET_KEY_CODE(KeyCode::CilckLeft, VK_LBUTTON);
+	SET_KEY_CODE(KeyCode::ClickLeft, VK_LBUTTON);
 	SET_KEY_CODE(KeyCode::ClickRight, VK_RBUTTON);
 	SET_KEY_CODE(KeyCode::Enter, VK_RBUTTON);
 	SET_KEY_CODE(KeyCode::Esc, VK_ESCAPE);

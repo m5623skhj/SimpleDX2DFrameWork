@@ -2,7 +2,7 @@
 
 enum KeyCode : int
 {
-	CilckLeft = 0,
+	ClickLeft = 0,
 	ClickRight,
 	Enter,
 	Esc,
