@@ -63,6 +63,11 @@ bool GameManager::Update(bool windowActive)
 		InputManager::GetInst().InputProcess();
 	}
 
+	if (Camera::GetInst().IsFadeInOutRunning() == true)
+	{
+		Camera::GetInst().UpdateFadeInOut();
+	}
+
 	UpdateObjectFromNetwork();
 
 	if (CalculateCheckTime() == false)
@@ -133,6 +138,12 @@ void GameManager::Render()
 
 	// Render map
 	ObjectManager::GetInst().RenderObjects();
+
+	if (Camera::GetInst().IsFadeInOutRunning() == true)
+	{
+		Camera::GetInst().RenderFadeInOut();
+	}
+
 	// Render mouse pointer
 
 	d2dRenderTarget->EndDraw();

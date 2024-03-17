@@ -13,7 +13,7 @@ public:
 	virtual void Render() = 0;
 
 public:
-	void SetPosition(const Position& inPosition);
+	void SetPosition(Position&& inPosition);
 	void SetMoveSpeed(BYTE inMoveSpeed);
 
 protected:

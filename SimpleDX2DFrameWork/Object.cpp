@@ -7,9 +7,9 @@ Object::Object(ObjectId inObjectId, Position& inPosition)
 {
 }
 
-void Object::SetPosition(const Position& inPosition)
+void Object::SetPosition(Position&& inPosition)
 {
-	position = inPosition;
+	position = std::move(inPosition);
 }
 
 void Object::SetMoveSpeed(BYTE inMoveSpeed)

@@ -49,6 +49,9 @@
     <Filter Include="소스 파일\Object\NPC">
       <UniqueIdentifier>{01af1fd7-ab39-496f-abbf-f37e9c03f03c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Manager\MousePointer">
+      <UniqueIdentifier>{c5a0bdec-42df-46cc-b7fb-f24db271fff1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -105,6 +108,9 @@
     <ClCompile Include="FightableObject.cpp">
       <Filter>소스 파일\Object\NPC</Filter>
     </ClCompile>
+    <ClCompile Include="MousePointer.cpp">
+      <Filter>소스 파일\Manager\MousePointer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameManager.h">
@@ -151,6 +157,9 @@
     </ClInclude>
     <ClInclude Include="FightableObject.h">
       <Filter>소스 파일\Object\NPC</Filter>
+    </ClInclude>
+    <ClInclude Include="MousePointer.h">
+      <Filter>소스 파일\Manager\MousePointer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

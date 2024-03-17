@@ -6,36 +6,36 @@ void Camera::Initialize()
 	
 }
 
-void Camera::InitPositionFromPlayer(WORD playerPosX, WORD playerPosY)
+void Camera::InitPositionFromPlayer(const Position& playerPos)
 {
-	if (playerPosX <= halfOfCameraX)
+	if (playerPos.posX <= halfOfCameraX)
 	{
 		cameraPos.posX = 0;
 	}
-	else if (playerPosX >= mapRange.right - halfOfCameraX)
+	else if (playerPos.posX >= mapRange.right - halfOfCameraX)
 	{
 		cameraPos.posX = mapRange.right - halfOfCameraX;
 	}
 	else
 	{
-		cameraPos.posX = playerPosX - halfOfCameraX;
+		cameraPos.posX = playerPos.posX - halfOfCameraX;
 	}
 
-	if (playerPosY <= halfOfCameraY)
+	if (playerPos.posY <= halfOfCameraY)
 	{
 		cameraPos.posY = 0;
 	}
-	else if (playerPosY >= mapRange.bottom - halfOfCameraY)
+	else if (playerPos.posY >= mapRange.bottom - halfOfCameraY)
 	{
 		cameraPos.posY = mapRange.bottom - halfOfCameraY;
 	}
 	else
 	{
-		cameraPos.posY = playerPosY;
+		cameraPos.posY = playerPos.posY;
 	}
 }
 
-void Camera::SetPositionFromPlayer(WORD playerPosX, WORD playerPosY)
+void Camera::SetPositionFromPlayer(const Position& playerPos)
 {
 	int checkX = cameraPos.posX - halfOfCameraX;
 	int checkY = cameraPos.posY - halfOfCameraY;
@@ -75,4 +75,56 @@ Position Camera::GetCameraPosition()
 void Camera::SetMapRange(const MapRange& inMapRange)
 {
 	mapRange = inMapRange;
+}
+
+void Camera::UpdateFadeInOut()
+{
+	if (fadeInOutOrder == FadeInOut::FadeIn)
+	{
+		FadeIn();
+	}
+	else if (fadeInOutOrder == FadeInOut::FadeOut)
+	{
+		FadeOut();
+	}
+}
+
+void Camera::RenderFadeInOut()
+{
+	if (fadeInOutOrder != FadeInOut::Normal)
+	{
+		// ImageManager::GetInst().TargetRendering(alpha);
+	}
+}
+
+bool Camera::IsFadeInOutRunning()
+{
+	return fadeInOutOrder != FadeInOut::Normal;
+}
+
+FadeInOut Camera::GetFadeInOutOrder()
+{
+	return fadeInOutOrder;
+}
+
+void Camera::FadeIn()
+{
+	fadeInOutAlpha -= fadInOutValue;
+
+	if (fadeInOutAlpha <= 0.0f)
+	{
+		fadeInOutAlpha = FadeInOut::Normal;
+		fadeInOutAlpha = 0.0f;
+	}
+}
+
+void Camera::FadeOut()
+{
+	fadeInOutAlpha += fadeInOutAlpha;
+
+	if (fadeInOutAlpha >= 1.0f)
+	{
+		fadeInOutAlpha = FadeInOut::Normal;
+		fadeInOutAlpha = 1.0f;
+	}
 }
