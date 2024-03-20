@@ -8,6 +8,7 @@ class ImageManager
 
 #pragma region Rendering
 public:
+	[[nodiscard]]
 	HRESULT Initialize(ID2D1HwndRenderTarget* inRenderTarget);
 
 private:

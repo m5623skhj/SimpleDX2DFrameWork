@@ -35,8 +35,14 @@ void GameManager::InitializeAllManager()
 	Camera::GetInst().Initialize();
 	SoundManager::GetInst().Initialize();
 	ObjectManager::GetInst().Initialize();
-	TextManager::GetInst().Initialize();
-	ImageManager::GetInst().Initialize(d2dRenderTarget);
+	if (FAILED(TextManager::GetInst().Initialize(d2dRenderTarget)))
+	{
+		throw;
+	}
+	if (FAILED(ImageManager::GetInst().Initialize(d2dRenderTarget)))
+	{
+		throw;
+	}
 	PacketManager::GetInst().Initialize();
 }
 
