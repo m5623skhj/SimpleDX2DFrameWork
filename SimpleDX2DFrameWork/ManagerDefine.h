@@ -17,3 +17,9 @@ private:
 	NON_COPYABLE_WITH_NON_DESTRUCTOR(NonCopyableClass) \
 private: \
 	~NonCopyableClass() = default;
+
+#define CHECK_RETVAL_WITH_BREAK(input) \
+if (FAILED(input) == true) \
+{ \
+	break; \
+}

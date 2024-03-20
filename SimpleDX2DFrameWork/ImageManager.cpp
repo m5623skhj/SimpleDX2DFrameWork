@@ -1,12 +1,6 @@
 #include "PreCompile.h"
 #include "ImageManager.h"
 
-#define CHECK_RETVAL_WITH_BREAK(input) \
-if (FAILED(input) == true) \
-{ \
-	break; \
-}
-
 HRESULT ImageManager::Initialize(ID2D1HwndRenderTarget* inRenderTarget)
 {
 	renderTarget = inRenderTarget;
