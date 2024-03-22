@@ -66,7 +66,7 @@ void GameManager::InitializeD2D(HWND hwnd)
 
 bool GameManager::Update(bool windowActive)
 {
-	UpdateManagerClass();
+	UpdateManagerClass(windowActive);
 	UpdateObjectFromNetwork();
 
 	if (CalculateCheckTime() == false)
@@ -78,7 +78,7 @@ bool GameManager::Update(bool windowActive)
 	return true;
 }
 
-void GameManager::UpdateManagerClass()
+void GameManager::UpdateManagerClass(bool windowActive)
 {
 	if (windowActive == true)
 	{

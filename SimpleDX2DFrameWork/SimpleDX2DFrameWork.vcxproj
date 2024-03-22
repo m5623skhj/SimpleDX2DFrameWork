@@ -156,12 +156,12 @@
     <ClInclude Include="Camera.h" />
     <ClInclude Include="D2DCommonHeader.h" />
     <ClInclude Include="Define.h" />
+    <ClInclude Include="enum.h" />
     <ClInclude Include="FightableObject.h" />
     <ClInclude Include="GameClient.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="ImageManager.h" />
     <ClInclude Include="InputManager.h" />
-    <ClInclude Include="KeyCode.h" />
     <ClInclude Include="ManagerDefine.h" />
     <ClInclude Include="MousePointer.h" />
     <ClInclude Include="Object.h" />
