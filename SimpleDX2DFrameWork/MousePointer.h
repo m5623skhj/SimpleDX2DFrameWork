@@ -13,6 +13,8 @@ public:
 	Position GetMousePosition();
 	Position GetMouseWorldPosition();
 
+	void SetMouseOnUI(bool isOnMouse);
+
 public:
 	void Update();
 	void Render();
@@ -22,4 +24,6 @@ private:
 
 	Position mousePosition;
 	Position mouseWorldPosition;
+
+	bool onMouseUI = false;
 };

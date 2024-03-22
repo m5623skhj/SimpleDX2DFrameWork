@@ -18,6 +18,12 @@ Position MousePointer::GetMouseWorldPosition()
 	return mouseWorldPosition;
 }
 
+
+void MousePointer::SetMouseOnUI(bool isOnMouse)
+{
+	onMouseUI = isOnMouse;
+}
+
 void MousePointer::Update()
 {
 	POINT mousePoint;
@@ -27,6 +33,7 @@ void MousePointer::Update()
 	mousePosition = mousePoint;
 
 	mouseWorldPosition = std::move(mousePosition + Camera::GetInst().GetCameraPosition());
+	InputManager::GetInst().IsPressKey(KeyCode::ClickLeft);
 }
 
 void MousePointer::Render()
