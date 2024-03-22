@@ -1,6 +1,6 @@
 #pragma once
 #include <vector>
-#include "KeyCode.h"
+#include "enum.h"
 #include "ManagerDefine.h"
 
 class InputManager
@@ -22,31 +22,7 @@ private:
 	void InitializeKeySetting();
 
 private:
-	struct KeyState
-	{
-		KeyState()
-		{
-			SetKeyState(false, false, false);
-			keyCode = KeyCode::InvalidKeyCode;
-		}
-
-		void SetKeyState(bool inPushNow, bool inPushing, bool inPopNow)
-		{
-			pushNow = inPushNow;
-			pushing = inPushing;
-			popNow = inPopNow;
-		}
-
-		bool pushNow;
-		bool pushing;
-		bool popNow;
-
-		KeyCode keyCode;
-	};
-
 	bool inputStop = false;
 	bool keyPressInThisFrame = false;
 	std::vector<KeyState> keyArray;
-
-private:
 };

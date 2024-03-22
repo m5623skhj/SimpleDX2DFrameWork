@@ -1,5 +1,5 @@
 #pragma once
-
+#include "enum.h"
 
 /////////////////////////////////////////////////////////////////////////
 // screen
@@ -86,6 +86,28 @@ struct Position
 
 		return newPosition;
 	}
+};
+
+struct KeyState
+{
+	KeyState()
+	{
+		SetKeyState(false, false, false);
+		keyCode = KeyCode::InvalidKeyCode;
+	}
+
+	void SetKeyState(bool inPushNow, bool inPushing, bool inPopNow)
+	{
+		pushNow = inPushNow;
+		pushing = inPushing;
+		popNow = inPopNow;
+	}
+
+	bool pushNow;
+	bool pushing;
+	bool popNow;
+
+	KeyCode keyCode;
 };
 
 #define OUT 
