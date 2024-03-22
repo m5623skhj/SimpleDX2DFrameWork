@@ -11,13 +11,14 @@ public:
 
 private:
 	void InitializeD2D(HWND hwnd);
-	void InitializeAllManager();
+	void InitializeAllManager(HWND hwnd);
 
 #pragma region Update
 public:
 	bool Update(bool windowActive);
 
 private:
+	void UpdateManagerClass(bool windowActive);
 	void UpdateObjectFromNetwork();
 	bool CalculateCheckTime();
 	void CalculateSleepTime(DWORD deltaTime);

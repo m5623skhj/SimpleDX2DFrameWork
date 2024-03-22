@@ -8,6 +8,7 @@
 #include "ImageManager.h"
 #include "PacketManager.h"
 #include "GameClient.h"
+#include "MousePointer.h"
 #include "NetServerSerializeBuffer.h"
 #include "Define.h"
 
@@ -21,7 +22,7 @@ if (restTime >= oneFrameMaxTime) \
 void GameManager::Initialize(HWND hwnd)
 {
 	InitializeD2D(hwnd);
-	InitializeAllManager();
+	InitializeAllManager(hwnd);
 
 	beforeTime = timeGetTime();
 	checkTime = beforeTime;
@@ -29,7 +30,7 @@ void GameManager::Initialize(HWND hwnd)
 	GameClient::GetInst().Start();
 }
 
-void GameManager::InitializeAllManager()
+void GameManager::InitializeAllManager(HWND hwnd)
 {
 	InputManager::GetInst().Initialize();
 	Camera::GetInst().Initialize();
@@ -43,6 +44,7 @@ void GameManager::InitializeAllManager()
 	{
 		throw;
 	}
+	MousePointer::GetInst().Initialize(hwnd);
 	PacketManager::GetInst().Initialize();
 }
 
@@ -64,16 +66,7 @@ void GameManager::InitializeD2D(HWND hwnd)
 
 bool GameManager::Update(bool windowActive)
 {
-	if (windowActive == true)
-	{
-		InputManager::GetInst().InputProcess();
-	}
-
-	if (Camera::GetInst().IsFadeInOutRunning() == true)
-	{
-		Camera::GetInst().UpdateFadeInOut();
-	}
-
+	UpdateManagerClass();
 	UpdateObjectFromNetwork();
 
 	if (CalculateCheckTime() == false)
@@ -83,6 +76,20 @@ bool GameManager::Update(bool windowActive)
 	Render();
 
 	return true;
+}
+
+void GameManager::UpdateManagerClass()
+{
+	if (windowActive == true)
+	{
+		InputManager::GetInst().InputProcess();
+	}
+	if (Camera::GetInst().IsFadeInOutRunning() == true)
+	{
+		Camera::GetInst().UpdateFadeInOut();
+	}
+	SoundManager::GetInst().UpdateSound();
+	MousePointer::GetInst().Update();
 }
 
 void GameManager::UpdateObjectFromNetwork()
@@ -150,7 +157,7 @@ void GameManager::Render()
 		Camera::GetInst().RenderFadeInOut();
 	}
 
-	// Render mouse pointer
+	MousePointer::GetInst().Render();
 
 	d2dRenderTarget->EndDraw();
 }
