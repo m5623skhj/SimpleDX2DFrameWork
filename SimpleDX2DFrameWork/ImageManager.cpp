@@ -1,5 +1,6 @@
 #include "PreCompile.h"
 #include "ImageManager.h"
+#include "nlohmann/json.hpp"
 
 HRESULT ImageManager::Initialize(ID2D1HwndRenderTarget* inRenderTarget)
 {

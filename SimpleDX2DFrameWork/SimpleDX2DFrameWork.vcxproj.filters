@@ -52,6 +52,9 @@
     <Filter Include="소스 파일\Manager\MousePointer">
       <UniqueIdentifier>{c5a0bdec-42df-46cc-b7fb-f24db271fff1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Config">
+      <UniqueIdentifier>{147b6007-cf0e-4c07-9c8e-8470cdde9997}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -111,6 +114,9 @@
     <ClCompile Include="MousePointer.cpp">
       <Filter>소스 파일\Manager\MousePointer</Filter>
     </ClCompile>
+    <ClCompile Include="Config.cpp">
+      <Filter>소스 파일\Config</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameManager.h">
@@ -160,6 +166,9 @@
     </ClInclude>
     <ClInclude Include="enum.h">
       <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Config.h">
+      <Filter>소스 파일\Config</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

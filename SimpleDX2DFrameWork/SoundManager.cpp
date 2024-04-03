@@ -1,5 +1,6 @@
 #include "PreCompile.h"
 #include "SoundManager.h"
+#include "nlohmann/json.hpp"
 
 SoundManager::~SoundManager()
 {
