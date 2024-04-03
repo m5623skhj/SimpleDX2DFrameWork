@@ -1,7 +1,7 @@
 #include "PreCompile.h"
 #include "InputManager.h"
 
-#define SET_KEY_CODE(inKeyCode, inRealKeyCode) keyArray[inKeyCode].keyCode = static_cast<KeyCode>(inRealKeyCode)
+#define SET_KEY_CODE(inKeyCode, inRealKeyCode) keyArray[static_cast<int>(inKeyCode)].keyCode = static_cast<KeyCode>(inRealKeyCode)
 
 void InputManager::Initialize()
 {
@@ -10,7 +10,7 @@ void InputManager::Initialize()
 
 void InputManager::InitializeKeySetting()
 {
-	keyArray.reserve(KeyCode::InvalidKeyCode);
+	keyArray.reserve(static_cast<int>(KeyCode::InvalidKeyCode));
 
 	SET_KEY_CODE(KeyCode::ClickLeft, VK_LBUTTON);
 	SET_KEY_CODE(KeyCode::ClickRight, VK_RBUTTON);
@@ -49,7 +49,7 @@ void InputManager::InputProcess()
 			continue;
 		}
 		
-		if (GetAsyncKeyState(key.keyCode) & 0x8000)
+		if (GetAsyncKeyState(static_cast<int>(key.keyCode)) & 0x8000)
 		{
 			if (key.pushing == true)
 			{
@@ -82,17 +82,17 @@ bool InputManager::GetKeyPressThisFrame()
 	return keyPressInThisFrame;
 }
 
-bool InputManager::IsPressKey(int confirmKey)
+bool InputManager::IsPressKey(KeyCode confirmKey)
 {
-	return keyArray[confirmKey].pushing;
+	return keyArray[static_cast<int>(confirmKey)].pushing;
 }
 
-bool InputManager::IsPressKeyThisFrame(int confirmKey)
+bool InputManager::IsPressKeyThisFrame(KeyCode confirmKey)
 {
-	return keyArray[confirmKey].pushNow;
+	return keyArray[static_cast<int>(confirmKey)].pushNow;
 }
 
-bool InputManager::IsPopKeyThisFrame(int confirmKey)
+bool InputManager::IsPopKeyThisFrame(KeyCode confirmKey)
 {
-	return keyArray[confirmKey].popNow;
+	return keyArray[static_cast<int>(confirmKey)].popNow;
 }

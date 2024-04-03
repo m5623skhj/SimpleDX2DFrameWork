@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
-#include "enum.h"
 #include "ManagerDefine.h"
+#include "Define.h"
 
 class InputManager
 {
@@ -14,9 +14,9 @@ public:
 	void InputProcess();
 
 	bool GetKeyPressThisFrame();
-	bool IsPressKey(int confirmKey);
-	bool IsPressKeyThisFrame(int confirmKey);
-	bool IsPopKeyThisFrame(int confirmKey);
+	bool IsPressKey(KeyCode confirmKey);
+	bool IsPressKeyThisFrame(KeyCode confirmKey);
+	bool IsPopKeyThisFrame(KeyCode confirmKey);
 
 private:
 	void InitializeKeySetting();

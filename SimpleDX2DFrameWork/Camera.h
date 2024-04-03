@@ -2,7 +2,7 @@
 #include "Define.h"
 #include "ManagerDefine.h"
 
-enum FadeInOut : BYTE
+enum class FadeInOut : BYTE
 {
 	Normal = 0,
 	FadeIn,

@@ -1,6 +1,7 @@
 #pragma once
+#include <cstdint>
 
-enum KeyCode : int
+enum class KeyCode : int
 {
 	ClickLeft = 0,
 	ClickRight,
@@ -29,10 +30,10 @@ enum KeyCode : int
 	//--------------------------
 
 	// it must be last
-	InvalidKeyCode = INT_MAX
+	InvalidKeyCode
 };
 
-enum ObjectType : short
+enum class ObjectType : short
 {
 	PCType = 0,
 	NPCType,
@@ -40,7 +41,7 @@ enum ObjectType : short
 	InvalidType = INT16_MAX
 };
 
-enum OnMouseType : char
+enum class OnMouseType : char
 {
 	Normal = 0,
 	OnCharacter,
@@ -48,5 +49,5 @@ enum OnMouseType : char
 	OnGrab,
 	OnAttack,
 	OnDoor,
-	InvalidType = INT16_MAX
+	InvalidType = CHAR_MAX
 };

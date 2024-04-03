@@ -113,7 +113,7 @@ void Camera::FadeIn()
 
 	if (fadeInOutAlpha <= 0.0f)
 	{
-		fadeInOutAlpha = FadeInOut::Normal;
+		fadeInOutOrder = FadeInOut::Normal;
 		fadeInOutAlpha = 0.0f;
 	}
 }
@@ -124,7 +124,7 @@ void Camera::FadeOut()
 
 	if (fadeInOutAlpha >= 1.0f)
 	{
-		fadeInOutAlpha = FadeInOut::Normal;
+		fadeInOutOrder = FadeInOut::Normal;
 		fadeInOutAlpha = 1.0f;
 	}
 }
