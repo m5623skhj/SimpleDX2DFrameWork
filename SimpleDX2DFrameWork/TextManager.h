@@ -37,7 +37,7 @@ private:
 	ID2D1SolidColorBrush* textBrush;
 
 private:
-	std::wstring_view textFormat = L"µ¸¿ò";
+	std::wstring_view textFormat = L"";
 	const DWRITE_FONT_WEIGHT fontWeight = DWRITE_FONT_WEIGHT_SEMI_LIGHT;
 	const DWRITE_FONT_STYLE fontStyle = DWRITE_FONT_STYLE_NORMAL;
 	const DWRITE_FONT_STRETCH fontStretch = DWRITE_FONT_STRETCH_NORMAL;
