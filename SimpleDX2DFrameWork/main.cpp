@@ -4,6 +4,9 @@
 #include <windowsx.h>
 #include "GameManager.h"
 
+#include "JsonUtil.h"
+#include "TestData.h"
+
 HINSTANCE g_hInstance;
 HWND g_hMainWnd;
 bool g_windowActive = true;
@@ -13,6 +16,14 @@ void MainLoop(MSG& message);
 
 int APIENTRY WinMain(HINSTANCE hInstansce, HINSTANCE prevInstance, LPSTR cmdParam, int cmdShow)
 {
+	if (JsonUtil::LoadAllDataScript() == false)
+	{
+		const std::wstring errorMessage = L"Failed to load data";
+
+		MessageBox(NULL, errorMessage.c_str(), L"Error", MB_ICONERROR | MB_OK);
+		return 0;
+	}
+
 	MSG message;
 	WNDCLASS WndClass;
 

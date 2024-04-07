@@ -107,7 +107,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\User\source\repos\SimpleDX2DFrameWork\inc;C:\Users\User\Desktop\Common\json-develop\include;C:\Users\User\Desktop\Common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\User\Desktop\Common\json-develop\include;C:\Users\User\Desktop\Common;C:\Users\User\source\repos\SimpleDX2DFrameWork\ScriptToObject;C:\Users\User\source\repos\SimpleDX2DFrameWork\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>PreCompile.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
@@ -172,6 +172,11 @@
     <ClInclude Include="PacketManager.h" />
     <ClInclude Include="SoundManager.h" />
     <ClInclude Include="TextManager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ScriptToObject\ScriptToObject.vcxproj">
+      <Project>{e6558999-a376-419f-a071-d1199c82dfa6}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
