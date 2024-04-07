@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="소스 파일\Data">
+      <UniqueIdentifier>{521977a6-08fa-4f81-84b3-bba5fac30e7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\ScriptToObject">
+      <UniqueIdentifier>{f17e8c0e-1c85-45d1-a6e4-801dc9d2ef15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\ScriptToObject\Header">
+      <UniqueIdentifier>{12bf093d-1678-4a56-90b3-91b77333e713}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\ScriptToObject\Source">
+      <UniqueIdentifier>{49484f9e-d88e-4b7b-8540-cf852d4ed4a1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Config.h">
+      <Filter>소스 파일\ScriptToObject\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="DataMacro.h">
+      <Filter>소스 파일\ScriptToObject\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="DataObjectBase.h">
+      <Filter>소스 파일\ScriptToObject\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="DataRegister.h">
+      <Filter>소스 파일\ScriptToObject\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="DataUtil.h">
+      <Filter>소스 파일\ScriptToObject\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="JsonUtil.h">
+      <Filter>소스 파일\ScriptToObject\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="TestData.h">
+      <Filter>소스 파일\Data</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DataUtil.cpp">
+      <Filter>소스 파일\ScriptToObject\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="JsonUtil.cpp">
+      <Filter>소스 파일\ScriptToObject\Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
