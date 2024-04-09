@@ -152,7 +152,7 @@
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="ObjectManager.cpp" />
     <ClCompile Include="PacketManager.cpp" />
-    <ClCompile Include="SoundManager.cpp" />
+    <ClCompile Include="SoundManagerImpl.cpp" />
     <ClCompile Include="TextManager.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -170,7 +170,7 @@
     <ClInclude Include="Object.h" />
     <ClInclude Include="ObjectManager.h" />
     <ClInclude Include="PacketManager.h" />
-    <ClInclude Include="SoundManager.h" />
+    <ClInclude Include="SoundManagerImpl.h" />
     <ClInclude Include="TextManager.h" />
   </ItemGroup>
   <ItemGroup>

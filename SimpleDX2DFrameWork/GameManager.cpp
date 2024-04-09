@@ -2,7 +2,7 @@
 #include "GameManager.h"
 #include "InputManager.h"
 #include "Camera.h"
-#include "SoundManager.h"
+#include "SoundManagerImpl.h"
 #include "ObjectManager.h"
 #include "TextManager.h"
 #include "ImageManager.h"
@@ -34,7 +34,7 @@ void GameManager::InitializeAllManager(HWND hwnd)
 {
 	InputManager::GetInst().Initialize();
 	Camera::GetInst().Initialize();
-	SoundManager::GetInst().Initialize();
+	SoundManagerImpl::GetInst().Initialize();
 	ObjectManager::GetInst().Initialize();
 	if (FAILED(TextManager::GetInst().Initialize(d2dRenderTarget)))
 	{
@@ -88,7 +88,7 @@ void GameManager::UpdateManagerClass(bool windowActive)
 	{
 		Camera::GetInst().UpdateFadeInOut();
 	}
-	SoundManager::GetInst().UpdateSound();
+	SoundManagerImpl::GetInst().UpdateSound();
 	MousePointer::GetInst().Update();
 }
 

@@ -66,7 +66,7 @@
     <ClCompile Include="Camera.cpp">
       <Filter>소스 파일\Camera</Filter>
     </ClCompile>
-    <ClCompile Include="SoundManager.cpp">
+    <ClCompile Include="SoundManagerImpl.cpp">
       <Filter>소스 파일\Manager\SoundManager</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\Desktop\Common\NetClient.cpp">
@@ -122,7 +122,7 @@
     <ClInclude Include="Camera.h">
       <Filter>소스 파일\Camera</Filter>
     </ClInclude>
-    <ClInclude Include="SoundManager.h">
+    <ClInclude Include="SoundManagerImpl.h">
       <Filter>소스 파일\Manager\SoundManager</Filter>
     </ClInclude>
     <ClInclude Include="GameClient.h">
