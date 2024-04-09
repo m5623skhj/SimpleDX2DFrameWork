@@ -48,6 +48,12 @@
     <ClInclude Include="TestData.h">
       <Filter>소스 파일\Data</Filter>
     </ClInclude>
+    <ClInclude Include="SoundData.h">
+      <Filter>소스 파일\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageData.h">
+      <Filter>소스 파일\Data</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DataUtil.cpp">
@@ -55,6 +61,9 @@
     </ClCompile>
     <ClCompile Include="JsonUtil.cpp">
       <Filter>소스 파일\ScriptToObject\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundData.cpp">
+      <Filter>소스 파일\Data</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

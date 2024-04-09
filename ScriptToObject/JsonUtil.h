@@ -11,7 +11,7 @@ namespace JsonUtil
 {
 	std::string GetCurrentFolder();
 	bool LoadAllDataScript();
-	bool AddToContainer();
+	bool AddToContainer(const std::string& currentFolder);
 	bool PostLoad();
 
 	template<DataBased T>

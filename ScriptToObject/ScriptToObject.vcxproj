@@ -107,7 +107,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\User\Desktop\Common;C:\Users\User\Desktop\Common\json-develop\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\User\Desktop\Common;C:\Users\User\Desktop\Common\json-develop\include;C:\Users\User\source\repos\SimpleDX2DFrameWork\SimpleDX2DFrameWork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -137,12 +137,15 @@
     <ClInclude Include="DataObjectBase.h" />
     <ClInclude Include="DataRegister.h" />
     <ClInclude Include="DataUtil.h" />
+    <ClInclude Include="ImageData.h" />
     <ClInclude Include="JsonUtil.h" />
+    <ClInclude Include="SoundData.h" />
     <ClInclude Include="TestData.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DataUtil.cpp" />
     <ClCompile Include="JsonUtil.cpp" />
+    <ClCompile Include="SoundData.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

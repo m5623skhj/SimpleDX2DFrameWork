@@ -3,6 +3,15 @@
 #include "DataUtil.h"
 #include "Config.h"
 
+//-----------------------------
+// Data include part
+
+#include "ImageData.h"
+#include "SoundData.h"
+
+// Data include part
+//-----------------------------
+
 #define ADD_TO_CONTAINER(className){ \
 	std::cout << "Start loading : " << #className << ".json" << std::endl; \
 	if(AddToDataContainerFromJsonFile<className>(currentFolder + Configuration::Config::GetInst().jsonScriptFolderPath + #className + ".json") == false) \
@@ -47,7 +56,7 @@ namespace JsonUtil
 			return false;
 		}
 
-		std::string currentFolder = GetCurrentFolder();
+		const std::string currentFolder = GetCurrentFolder();
 
 		std::cout << std::endl
 			<< "--------------------------------------" << std::endl
@@ -56,7 +65,7 @@ namespace JsonUtil
 
 #pragma region AddToContainer
 
-		if (JsonUtil::AddToContainer() == false)
+		if (JsonUtil::AddToContainer(currentFolder) == false)
 		{
 			return false;
 		}
@@ -86,9 +95,10 @@ namespace JsonUtil
 		return true;
 	}
 
-	bool AddToContainer()
+	bool AddToContainer(const std::string& currentFolder)
 	{
-		//ADD_TO_CONTAINER(class);
+		ADD_TO_CONTAINER(ImageData);
+		ADD_TO_CONTAINER(SoundData)
 
 		return true;
 	}
@@ -97,7 +107,8 @@ namespace JsonUtil
 	{
 		bool isPostLoadSuccessed = true;
 
-		//POST_LOAD(class);
+		POST_LOAD(ImageData);
+		POST_LOAD(SoundData);
 
 		return isPostLoadSuccessed;
 	}
