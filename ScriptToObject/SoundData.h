@@ -15,7 +15,7 @@ private:
 	SoundManager& operator=(const SoundManager& other) = delete;
 	~SoundManager();
 
-public:
+private:
 	static SoundManager& GetInst()
 	{
 		static SoundManager instance;
