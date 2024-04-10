@@ -99,7 +99,7 @@
     <ClCompile Include="PacketManager.cpp">
       <Filter>소스 파일\Manager\ObjectManager</Filter>
     </ClCompile>
-    <ClCompile Include="ImageManager.cpp">
+    <ClCompile Include="ImageManagerImpl.cpp">
       <Filter>소스 파일\Manager\ImageManager</Filter>
     </ClCompile>
     <ClCompile Include="TextManager.cpp">
@@ -137,7 +137,7 @@
     <ClInclude Include="PacketManager.h">
       <Filter>소스 파일\Manager\ObjectManager</Filter>
     </ClInclude>
-    <ClInclude Include="ImageManager.h">
+    <ClInclude Include="ImageManagerImpl.h">
       <Filter>소스 파일\Manager\ImageManager</Filter>
     </ClInclude>
     <ClInclude Include="TextManager.h">

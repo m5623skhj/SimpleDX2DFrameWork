@@ -5,7 +5,7 @@
 #include "SoundManagerImpl.h"
 #include "ObjectManager.h"
 #include "TextManager.h"
-#include "ImageManager.h"
+#include "ImageManagerImpl.h"
 #include "PacketManager.h"
 #include "GameClient.h"
 #include "MousePointer.h"
@@ -40,7 +40,7 @@ void GameManager::InitializeAllManager(HWND hwnd)
 	{
 		throw;
 	}
-	if (FAILED(ImageManager::GetInst().Initialize(d2dRenderTarget)))
+	if (FAILED(ImageManagerImpl::GetInst().Initialize()))
 	{
 		throw;
 	}

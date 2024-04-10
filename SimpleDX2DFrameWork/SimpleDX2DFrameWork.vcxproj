@@ -145,7 +145,7 @@
     <ClCompile Include="FightableObject.cpp" />
     <ClCompile Include="GameClient.cpp" />
     <ClCompile Include="GameManager.cpp" />
-    <ClCompile Include="ImageManager.cpp" />
+    <ClCompile Include="ImageManagerImpl.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MousePointer.cpp" />
@@ -163,7 +163,7 @@
     <ClInclude Include="FightableObject.h" />
     <ClInclude Include="GameClient.h" />
     <ClInclude Include="GameManager.h" />
-    <ClInclude Include="ImageManager.h" />
+    <ClInclude Include="ImageManagerImpl.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="ManagerDefine.h" />
     <ClInclude Include="MousePointer.h" />
