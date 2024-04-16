@@ -41,16 +41,12 @@ public:
 
 	virtual bool PostLoad()
 	{
-		DWORD retval = FMOD_System_CreateSound(
-			SoundManager::GetInst().fmodSystem,
-			soundName.c_str(), 
-			FMOD_2D | FMOD_LOOP_NORMAL,
-			NULL,
-			&sound);
-
-		return retval == FMOD_OK;
+		return CreateSound();
 	}
 
 public:
 	FMOD_SOUND *sound;
+
+private:
+	bool CreateSound();
 };
