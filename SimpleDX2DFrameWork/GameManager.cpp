@@ -10,7 +10,6 @@
 #include "GameClient.h"
 #include "MousePointer.h"
 #include "NetServerSerializeBuffer.h"
-#include "Define.h"
 
 #define CHECK_REST_TIME() \
 if (restTime >= oneFrameMaxTime) \
@@ -21,7 +20,6 @@ if (restTime >= oneFrameMaxTime) \
 
 void GameManager::Initialize(HWND hwnd)
 {
-	InitializeD2D(hwnd);
 	InitializeAllManager(hwnd);
 
 	beforeTime = timeGetTime();
@@ -36,32 +34,16 @@ void GameManager::InitializeAllManager(HWND hwnd)
 	Camera::GetInst().Initialize();
 	SoundManagerImpl::GetInst().Initialize();
 	ObjectManager::GetInst().Initialize();
-	if (FAILED(TextManager::GetInst().Initialize(d2dRenderTarget)))
+	if (FAILED(ImageManagerImpl::GetInst().Initialize(hwnd)))
 	{
 		throw;
 	}
-	if (FAILED(ImageManagerImpl::GetInst().Initialize()))
+	if (FAILED(TextManager::GetInst().Initialize(ImageManagerImpl::GetInst().GetRenderTarget())))
 	{
 		throw;
 	}
 	MousePointer::GetInst().Initialize(hwnd);
 	PacketManager::GetInst().Initialize();
-}
-
-void GameManager::InitializeD2D(HWND hwnd)
-{
-	if (FAILED(D2D1CreateFactory(D2D1_FACTORY_TYPE_MULTI_THREADED, &d2dFactory)) == true)
-	{
-		throw;
-	}
-
-	if (FAILED(d2dFactory->CreateHwndRenderTarget(
-		D2D1::RenderTargetProperties()
-		, D2D1::HwndRenderTargetProperties(hwnd, D2D1::SizeU(windowSizeX, windowSizeY))
-		, &d2dRenderTarget)) == true)
-	{
-		throw;
-	}
 }
 
 bool GameManager::Update(bool windowActive)
@@ -147,7 +129,7 @@ void GameManager::Render()
 {
 	auto cameraPos = Camera::GetInst().GetCameraPosition();
 
-	d2dRenderTarget->BeginDraw();
+	ImageManagerImpl::GetInst().BeginDraw();
 
 	// Render map
 	ObjectManager::GetInst().RenderObjects();
@@ -159,5 +141,5 @@ void GameManager::Render()
 
 	MousePointer::GetInst().Render();
 
-	d2dRenderTarget->EndDraw();
+	ImageManagerImpl::GetInst().EndDraw();
 }

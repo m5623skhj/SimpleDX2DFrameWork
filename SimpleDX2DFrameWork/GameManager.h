@@ -10,7 +10,6 @@ public:
 	void Initialize(HWND hwnd);
 
 private:
-	void InitializeD2D(HWND hwnd);
 	void InitializeAllManager(HWND hwnd);
 
 #pragma region Update
@@ -28,9 +27,5 @@ private:
 	DWORD beforeTime;
 	DWORD checkTime;
 	DWORD restTime;
-
-private:
-	ID2D1Factory* d2dFactory;
-	ID2D1HwndRenderTarget* d2dRenderTarget;
 #pragma endregion Update
 };
