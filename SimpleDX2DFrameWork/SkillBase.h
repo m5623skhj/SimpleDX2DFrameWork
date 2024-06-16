@@ -4,6 +4,8 @@
 class SkillBase
 {
 public:
+	SkillBase() = delete;
+	explicit SkillBase(SkillId inSkillId);
 	virtual ~SkillBase();
 
 public:
