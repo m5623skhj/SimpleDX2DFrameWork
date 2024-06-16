@@ -152,6 +152,8 @@
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="ObjectManager.cpp" />
     <ClCompile Include="PacketManager.cpp" />
+    <ClCompile Include="SkillBase.cpp" />
+    <ClCompile Include="SkillImpl.cpp" />
     <ClCompile Include="SoundManagerImpl.cpp" />
     <ClCompile Include="TextManager.cpp" />
   </ItemGroup>
@@ -170,6 +172,8 @@
     <ClInclude Include="Object.h" />
     <ClInclude Include="ObjectManager.h" />
     <ClInclude Include="PacketManager.h" />
+    <ClInclude Include="SkillBase.h" />
+    <ClInclude Include="SkillImpl.h" />
     <ClInclude Include="SoundManagerImpl.h" />
     <ClInclude Include="TextManager.h" />
   </ItemGroup>

@@ -38,6 +38,9 @@ const int heartbeatThreadAwakenMillisec = 10000;
 /////////////////////////////////////////////////////////////////////////
 using ObjectId = UINT64;
 using PacketType = WORD;
+using SkillId = INT;
+
+const INT InvalidId = -1;
 
 struct MapRange
 {

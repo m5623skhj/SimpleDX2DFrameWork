@@ -52,6 +52,9 @@
     <Filter Include="소스 파일\Manager\MousePointer">
       <UniqueIdentifier>{c5a0bdec-42df-46cc-b7fb-f24db271fff1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Skill">
+      <UniqueIdentifier>{306240e9-bec3-4149-b578-0e81ef277190}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -111,6 +114,12 @@
     <ClCompile Include="MousePointer.cpp">
       <Filter>소스 파일\Manager\MousePointer</Filter>
     </ClCompile>
+    <ClCompile Include="SkillBase.cpp">
+      <Filter>소스 파일\Skill</Filter>
+    </ClCompile>
+    <ClCompile Include="SkillImpl.cpp">
+      <Filter>소스 파일\Skill</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameManager.h">
@@ -160,6 +169,12 @@
     </ClInclude>
     <ClInclude Include="enum.h">
       <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="SkillBase.h">
+      <Filter>소스 파일\Skill</Filter>
+    </ClInclude>
+    <ClInclude Include="SkillImpl.h">
+      <Filter>소스 파일\Skill</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
