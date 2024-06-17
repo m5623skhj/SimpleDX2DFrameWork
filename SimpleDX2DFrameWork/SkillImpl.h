@@ -9,8 +9,26 @@ public:
 	explicit TargettingSkill(SkillId inSkillId);
 	~TargettingSkill() override;
 
-private:
+public:
+	virtual bool UseSkill() override;
 
+private:
+	ObjectId targetObjectId = InvalidObjectId;
+};
+
+class NonTargettingSkill : public SkillBase
+{
+public:
+	NonTargettingSkill() = delete;
+	explicit NonTargettingSkill(SkillId inSkillId);
+	~NonTargettingSkill() override;
+
+public:
+	virtual bool UseSkill() override;
+	void SetTargetPosition(Position&& inPosition) { targetPosition = std::move(inPosition); }
+
+private:
+	Position targetPosition{};
 };
 
 class RangeSkill : public SkillBase
@@ -19,6 +37,23 @@ public:
 	RangeSkill() = delete;
 	explicit RangeSkill(SkillId inSkillId);
 	~RangeSkill() override;
+
+public:
+	virtual bool UseSkill() override;
+
+private:
+
+};
+
+class ChannelingSkill : public SkillBase
+{
+public:
+	ChannelingSkill() = delete;
+	explicit ChannelingSkill(SkillId inSkillId);
+	~ChannelingSkill() override;
+
+public:
+	virtual bool UseSkill() override;
 
 private:
 
@@ -30,6 +65,9 @@ public:
 	ItemSkill() = delete;
 	explicit ItemSkill(SkillId inSkillId);
 	~ItemSkill() override;
+
+public:
+	virtual bool UseSkill() override;
 
 private:
 

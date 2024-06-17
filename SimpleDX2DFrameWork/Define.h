@@ -40,6 +40,7 @@ using ObjectId = UINT64;
 using PacketType = WORD;
 using SkillId = INT;
 
+const UINT64 InvalidObjectId = -1;
 const INT InvalidId = -1;
 
 struct MapRange
