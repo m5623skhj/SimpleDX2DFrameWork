@@ -11,6 +11,7 @@ public:
 
 public:
 	virtual bool UseSkill() override;
+	void SetTargetObject(ObjectId inTargetObjectId) { targetObjectId = inTargetObjectId; }
 
 private:
 	ObjectId targetObjectId = InvalidObjectId;
