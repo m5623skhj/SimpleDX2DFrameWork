@@ -55,6 +55,9 @@
     <Filter Include="소스 파일\Skill">
       <UniqueIdentifier>{306240e9-bec3-4149-b578-0e81ef277190}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Object\PC">
+      <UniqueIdentifier>{bd9b7428-67b5-414a-b244-1c84de49b0e9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -120,6 +123,12 @@
     <ClCompile Include="SkillImpl.cpp">
       <Filter>소스 파일\Skill</Filter>
     </ClCompile>
+    <ClCompile Include="PC.cpp">
+      <Filter>소스 파일\Object\PC</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerController.cpp">
+      <Filter>소스 파일\Object\PC</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameManager.h">
@@ -175,6 +184,12 @@
     </ClInclude>
     <ClInclude Include="SkillImpl.h">
       <Filter>소스 파일\Skill</Filter>
+    </ClInclude>
+    <ClInclude Include="PC.h">
+      <Filter>소스 파일\Object\PC</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerController.h">
+      <Filter>소스 파일\Object\PC</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
