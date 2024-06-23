@@ -2,7 +2,7 @@
 #include "FightableObject.h"
 
 FightableObject::FightableObject(ObjectId inObjectId, Position& inPosition, int inHp, bool inIsDie)
-	: Object(inObjectId, inPosition)
+	: MoveableObject(inObjectId, inPosition)
 	, hp(inHp)
 	, isDie(inIsDie)
 {

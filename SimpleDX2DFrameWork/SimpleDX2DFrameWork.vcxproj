@@ -149,6 +149,7 @@
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MousePointer.cpp" />
+    <ClCompile Include="MoveableObject.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="ObjectManager.cpp" />
     <ClCompile Include="PacketManager.cpp" />
@@ -171,6 +172,7 @@
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="ManagerDefine.h" />
     <ClInclude Include="MousePointer.h" />
+    <ClInclude Include="MoveableObject.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="ObjectManager.h" />
     <ClInclude Include="PacketManager.h" />

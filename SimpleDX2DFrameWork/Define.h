@@ -82,6 +82,12 @@ struct Position
 		posY = static_cast<WORD>(point.y);
 	}
 
+	void operator=(const Position& in)
+	{
+		this->posX = in.posX;
+		this->posY = in.posY;
+	}
+
 	Position operator+(const Position& other)
 	{
 		Position newPosition;

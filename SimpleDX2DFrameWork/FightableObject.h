@@ -1,7 +1,7 @@
 #pragma once
-#include "Object.h"
+#include "MoveableObject.h"
 
-class FightableObject : public Object
+class FightableObject : public MoveableObject
 {
 public:
 	FightableObject() = delete;

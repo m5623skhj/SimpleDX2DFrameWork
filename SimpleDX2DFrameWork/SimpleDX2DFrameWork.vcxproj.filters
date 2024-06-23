@@ -111,9 +111,6 @@
     <ClCompile Include="TextManager.cpp">
       <Filter>소스 파일\Manager\TextManager</Filter>
     </ClCompile>
-    <ClCompile Include="FightableObject.cpp">
-      <Filter>소스 파일\Object\NPC</Filter>
-    </ClCompile>
     <ClCompile Include="MousePointer.cpp">
       <Filter>소스 파일\Manager\MousePointer</Filter>
     </ClCompile>
@@ -128,6 +125,12 @@
     </ClCompile>
     <ClCompile Include="PlayerController.cpp">
       <Filter>소스 파일\Object\PC</Filter>
+    </ClCompile>
+    <ClCompile Include="FightableObject.cpp">
+      <Filter>소스 파일\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="MoveableObject.cpp">
+      <Filter>소스 파일\Object</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -170,9 +173,6 @@
     <ClInclude Include="ManagerDefine.h">
       <Filter>소스 파일\Manager</Filter>
     </ClInclude>
-    <ClInclude Include="FightableObject.h">
-      <Filter>소스 파일\Object\NPC</Filter>
-    </ClInclude>
     <ClInclude Include="MousePointer.h">
       <Filter>소스 파일\Manager\MousePointer</Filter>
     </ClInclude>
@@ -190,6 +190,12 @@
     </ClInclude>
     <ClInclude Include="PlayerController.h">
       <Filter>소스 파일\Object\PC</Filter>
+    </ClInclude>
+    <ClInclude Include="FightableObject.h">
+      <Filter>소스 파일\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveableObject.h">
+      <Filter>소스 파일\Object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
