@@ -13,6 +13,7 @@ public:
 	virtual void Render() = 0;
 
 public:
+	ObjectId GetObjectId() { return objectId; }
 	void SetPosition(Position&& inPosition);
 	void SetMoveSpeed(BYTE inMoveSpeed);
 

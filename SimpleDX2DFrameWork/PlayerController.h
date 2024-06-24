@@ -1,16 +1,17 @@
 #pragma once
 #include "Define.h"
+#include "PC.h"
 
 class PlayerController
 {
 public:
-	PlayerController() = default;
+	PlayerController() = delete;
+	explicit PlayerController(PC& inOwner);
 	~PlayerController() = default;
 
 public:
-	void SetMyPCObjectId(const ObjectId& inObjectId) { myPCObjectId = inObjectId; }
-	ObjectId GetMyPCObjectId() { return myPCObjectId; }
+	ObjectId GetPlayerObjectId() { return owner.GetObjectId(); }
 
 private:
-	ObjectId myPCObjectId = {};
+	PC& owner;
 };
