@@ -10,8 +10,8 @@ public:
 	~PlayerController() = default;
 
 public:
-	ObjectId GetPlayerObjectId() { return owner.GetObjectId(); }
+	ObjectId GetPlayerObjectId() { return controllPC.GetObjectId(); }
 
 private:
-	PC& owner;
+	PC& controllPC;
 };
