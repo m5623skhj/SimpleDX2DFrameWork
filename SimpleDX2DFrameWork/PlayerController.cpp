@@ -2,6 +2,6 @@
 #include "PlayerController.h"
 
 PlayerController::PlayerController(PC& inOwner)
-	: owner(inOwner)
+	: controllPC(inOwner)
 {
 }
