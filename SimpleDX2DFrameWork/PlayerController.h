@@ -6,12 +6,12 @@ class PlayerController
 {
 public:
 	PlayerController() = delete;
-	explicit PlayerController(PC& inOwner);
+	explicit PlayerController(PC& inControlledPC);
 	~PlayerController() = default;
 
 public:
-	ObjectId GetPlayerObjectId() { return controllPC.GetObjectId(); }
+	ObjectId GetPlayerObjectId() { return controlledPC.GetObjectId(); }
 
 private:
-	PC& controllPC;
+	PC& controlledPC;
 };
