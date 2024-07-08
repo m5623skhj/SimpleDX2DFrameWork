@@ -96,3 +96,8 @@ bool InputManager::IsPopKeyThisFrame(KeyCode confirmKey)
 {
 	return keyArray[static_cast<int>(confirmKey)].popNow;
 }
+
+KeyState InputManager::GetKeyState(KeyCode confirmKey)
+{
+	return keyArray[static_cast<int>(confirmKey)];
+}

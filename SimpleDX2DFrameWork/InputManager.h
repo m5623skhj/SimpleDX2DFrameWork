@@ -17,6 +17,7 @@ public:
 	bool IsPressKey(KeyCode confirmKey);
 	bool IsPressKeyThisFrame(KeyCode confirmKey);
 	bool IsPopKeyThisFrame(KeyCode confirmKey);
+	KeyState GetKeyState(KeyCode confirmKey);
 
 private:
 	void InitializeKeySetting();
