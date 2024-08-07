@@ -86,7 +86,7 @@ void GameManager::UpdateObjectFromNetwork()
 		}
 
 		// Update object from server packet
-		ObjectManager::GetInst().ObjectNetworkProc(buffer);
+		ObjectManager::GetInst().ObjectNetworkProc(*buffer);
 		CNetServerSerializationBuf::Free(buffer);
 	}
 }

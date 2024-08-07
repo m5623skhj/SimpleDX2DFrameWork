@@ -19,7 +19,24 @@ void ObjectManager::RenderObjects()
 
 }
 
-void ObjectManager::ObjectNetworkProc(CNetServerSerializationBuf* packet)
+void ObjectManager::ObjectNetworkProc(CNetServerSerializationBuf& packet)
 {
-	UNREFERENCED_PARAMETER(packet);
+	WORD type;
+	packet >> type;
+
+	if (IsInvalidPacketType(type))
+	{
+		return;
+	}
+
+	PacketHandle(static_cast<PacketProtocolType>(type), packet);
+}
+
+void ObjectManager::PacketHandle(PacketProtocolType packetType, CNetServerSerializationBuf& packet)
+{
+    switch (packetType)
+    {
+    default:
+        break;
+    }
 }

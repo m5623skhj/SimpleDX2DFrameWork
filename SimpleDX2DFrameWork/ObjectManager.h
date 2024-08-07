@@ -18,7 +18,16 @@ public:
 	void UpdateObjects();
 	void RenderObjects();
 
-	void ObjectNetworkProc(CNetServerSerializationBuf* packet);
+	void ObjectNetworkProc(CNetServerSerializationBuf& packet);
+
+private:
+	void PacketHandle(PacketProtocolType packetType, CNetServerSerializationBuf& packet);
+
+	// Define packet handler in here
+	// Define packet handler in here
+
+private:
+	inline bool IsInvalidPacketType(WORD packetType) { return packetType >= static_cast<unsigned short>(PacketProtocolType::Max); }
 
 private:
 	std::unordered_map<ObjectId, std::shared_ptr<Object>> objectMap;

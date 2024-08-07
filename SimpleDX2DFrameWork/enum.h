@@ -51,3 +51,13 @@ enum class OnMouseType : char
 	OnDoor,
 	InvalidType = CHAR_MAX
 };
+
+enum class PacketProtocolType : unsigned short
+{
+	// define packet type on here
+	Ping = 0,
+	Pong,
+	// define packet type on here
+
+	Max
+};
