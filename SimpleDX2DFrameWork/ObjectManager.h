@@ -31,5 +31,4 @@ private:
 
 private:
 	std::unordered_map<ObjectId, std::shared_ptr<Object>> objectMap;
-	std::shared_mutex objectMapLock;
 };
