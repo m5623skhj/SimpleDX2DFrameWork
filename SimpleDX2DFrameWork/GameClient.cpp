@@ -23,6 +23,7 @@ void GameClient::Stop()
 
 bool GameClient::RecvPacket(CNetServerSerializationBuf** packet)
 {
+	std::lock_guard lock(recvQueueLock);
 	if (recvQueue.GetRestSize() <= 0)
 	{
 		return false;
@@ -56,6 +57,7 @@ void GameClient::OnRelease()
 void GameClient::OnRecv(CNetServerSerializationBuf* outReadBuf)
 {
 	CNetServerSerializationBuf::AddRefCount(outReadBuf);
+	std::lock_guard lock(recvQueueLock);
 	recvQueue.Enqueue(outReadBuf);
 }
 

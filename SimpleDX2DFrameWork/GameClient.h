@@ -3,6 +3,7 @@
 #include "Queue.h"
 #include <thread>
 #include "ManagerDefine.h"
+#include <mutex>
 
 class GameClient : public CNetClient
 {
@@ -33,6 +34,7 @@ private:
 
 private:
 	CListBaseQueue<CNetServerSerializationBuf*> recvQueue;
+	std::mutex recvQueueLock;
 
 private:
 	void HeartbeatThread();
