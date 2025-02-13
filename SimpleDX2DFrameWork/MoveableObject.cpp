@@ -15,3 +15,8 @@ void MoveableObject::MoveTo(Position&& targetDestination)
 {
 	nowMoveDestination = std::move(targetDestination);
 }
+
+void MoveableObject::SetMoveSpeed(BYTE inMoveSpeed)
+{
+	moveSpeed = inMoveSpeed;
+}

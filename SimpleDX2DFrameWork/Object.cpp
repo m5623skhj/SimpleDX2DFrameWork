@@ -11,8 +11,3 @@ void Object::SetPosition(Position&& inPosition)
 {
 	position = std::move(inPosition);
 }
-
-void Object::SetMoveSpeed(BYTE inMoveSpeed)
-{
-	moveSpeed = inMoveSpeed;
-}

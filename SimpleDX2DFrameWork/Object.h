@@ -13,15 +13,12 @@ public:
 	virtual void Render() = 0;
 
 public:
-	ObjectId GetObjectId() { return objectId; }
+	ObjectId GetObjectId() const { return objectId; }
 	void SetPosition(Position&& inPosition);
-	void SetMoveSpeed(BYTE inMoveSpeed);
 
 protected:
 	ObjectId objectId;
 
 protected:
 	Position position;
-	// Get from server? Or client data?
-	BYTE moveSpeed;
 };

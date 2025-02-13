@@ -12,6 +12,9 @@ public:
 	void MoveTo(const Position& targetDestination);
 	void MoveTo(Position&& targetDestination);
 
+	void SetMoveSpeed(BYTE inMoveSpeed);
+
 private:
 	Position nowMoveDestination = {};
+	BYTE moveSpeed;
 };
