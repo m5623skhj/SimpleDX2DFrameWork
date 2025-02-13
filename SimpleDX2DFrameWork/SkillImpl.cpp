@@ -1,8 +1,8 @@
 #include "PreCompile.h"
 #include "SkillImpl.h"
 
-TargettingSkill::TargettingSkill(SkillId inSkillId)
-	: SkillBase(inSkillId)
+TargettingSkill::TargettingSkill(SkillId inSkillId, std::shared_ptr<FightableObject> skillOwner)
+	: SkillBase(inSkillId, skillOwner)
 {
 }
 
@@ -15,8 +15,8 @@ bool TargettingSkill::UseSkill()
 	return true;
 }
 
-NonTargettingSkill::NonTargettingSkill(SkillId inSkillId)
-	: SkillBase(inSkillId)
+NonTargettingSkill::NonTargettingSkill(SkillId inSkillId, std::shared_ptr<FightableObject> skillOwner)
+	: SkillBase(inSkillId, skillOwner)
 {
 }
 
@@ -29,8 +29,8 @@ bool NonTargettingSkill::UseSkill()
 	return true;
 }
 
-RangeSkill::RangeSkill(SkillId inSkillId)
-	: SkillBase(inSkillId)
+RangeSkill::RangeSkill(SkillId inSkillId, std::shared_ptr<FightableObject> skillOwner)
+	: SkillBase(inSkillId, skillOwner)
 {
 }
 
@@ -43,8 +43,8 @@ bool RangeSkill::UseSkill()
 	return true;
 }
 
-ChannelingSkill::ChannelingSkill(SkillId inSkillId)
-	: SkillBase(inSkillId)
+ChannelingSkill::ChannelingSkill(SkillId inSkillId, std::shared_ptr<FightableObject> skillOwner)
+	: SkillBase(inSkillId, skillOwner)
 {
 }
 
@@ -57,8 +57,8 @@ bool ChannelingSkill::UseSkill()
 	return true;
 }
 
-ItemSkill::ItemSkill(SkillId inSkillId)
-	: SkillBase(inSkillId)
+ItemSkill::ItemSkill(SkillId inSkillId, std::shared_ptr<FightableObject> skillOwner)
+	: SkillBase(inSkillId, skillOwner)
 {
 }
 

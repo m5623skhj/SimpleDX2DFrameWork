@@ -2,11 +2,13 @@
 #include "SkillBase.h"
 #include "Define.h"
 
+class FightableObject;
+
 class TargettingSkill : public SkillBase
 {
 public:
 	TargettingSkill() = delete;
-	explicit TargettingSkill(SkillId inSkillId);
+	explicit TargettingSkill(SkillId inSkillId, std::shared_ptr<FightableObject> skillOwner);
 	~TargettingSkill() override;
 
 public:
@@ -21,7 +23,7 @@ class NonTargettingSkill : public SkillBase
 {
 public:
 	NonTargettingSkill() = delete;
-	explicit NonTargettingSkill(SkillId inSkillId);
+	explicit NonTargettingSkill(SkillId inSkillId, std::shared_ptr<FightableObject> skillOwner);
 	~NonTargettingSkill() override;
 
 public:
@@ -36,7 +38,7 @@ class RangeSkill : public SkillBase
 {
 public:
 	RangeSkill() = delete;
-	explicit RangeSkill(SkillId inSkillId);
+	explicit RangeSkill(SkillId inSkillId, std::shared_ptr<FightableObject> skillOwner);
 	~RangeSkill() override;
 
 public:
@@ -50,7 +52,7 @@ class ChannelingSkill : public SkillBase
 {
 public:
 	ChannelingSkill() = delete;
-	explicit ChannelingSkill(SkillId inSkillId);
+	explicit ChannelingSkill(SkillId inSkillId, std::shared_ptr<FightableObject> skillOwner);
 	~ChannelingSkill() override;
 
 public:
@@ -64,7 +66,7 @@ class ItemSkill : public SkillBase
 {
 public:
 	ItemSkill() = delete;
-	explicit ItemSkill(SkillId inSkillId);
+	explicit ItemSkill(SkillId inSkillId, std::shared_ptr<FightableObject> skillOwner);
 	~ItemSkill() override;
 
 public:
