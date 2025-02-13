@@ -7,8 +7,14 @@ void MousePointer::Initialize(HWND inHWnd)
 {
 	hWnd = inHWnd;
 
+	constexpr int mouseButtonCount = 2;
+	mouseButtonArray.reserve(mouseButtonCount);
+	for (int i = 0; i < mouseButtonCount; ++i)
+	{
+		mouseButtonArray.emplace_back();
+	}
+
 	// mouse left button 0, right button 1
-	mouseButtonArray.reserve(2);
 	mouseButtonArray[0].keyCode = KeyCode::ClickLeft;
 	mouseButtonArray[1].keyCode = KeyCode::ClickRight;
 
