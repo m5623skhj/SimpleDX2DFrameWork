@@ -10,7 +10,11 @@ void InputManager::Initialize()
 
 void InputManager::InitializeKeySetting()
 {
-	keyArray.reserve(static_cast<int>(KeyCode::InvalidKeyCode));
+	keyArray.reserve(static_cast<int>(KeyCode::KeyCodeMax));
+	for (int i = 0; i < static_cast<int>(KeyCode::KeyCodeMax); ++i)
+	{
+		keyArray.emplace_back();
+	}
 
 	SET_KEY_CODE(KeyCode::ClickLeft, VK_LBUTTON);
 	SET_KEY_CODE(KeyCode::ClickRight, VK_RBUTTON);
@@ -44,7 +48,7 @@ void InputManager::InputProcess()
 
 	for (auto& key : keyArray)
 	{
-		if (key.keyCode == KeyCode::InvalidKeyCode)
+		if (key.keyCode == KeyCode::KeyCodeMax)
 		{
 			continue;
 		}

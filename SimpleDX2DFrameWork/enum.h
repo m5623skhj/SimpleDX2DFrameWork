@@ -30,7 +30,7 @@ enum class KeyCode : int
 	//--------------------------
 
 	// it must be last
-	InvalidKeyCode
+	KeyCodeMax
 };
 
 enum class ObjectType : short

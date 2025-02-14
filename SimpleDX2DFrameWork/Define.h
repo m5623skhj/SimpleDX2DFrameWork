@@ -103,7 +103,7 @@ struct KeyState
 	KeyState()
 	{
 		SetKeyState(false, false, false);
-		keyCode = KeyCode::InvalidKeyCode;
+		keyCode = KeyCode::KeyCodeMax;
 	}
 
 	void SetKeyState(bool inPushNow, bool inPushing, bool inPopNow)
